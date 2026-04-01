@@ -6,7 +6,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
-import Course from "@/pages/Course";
 import Membership from "@/pages/Membership";
 import Events from "@/pages/Events";
 import Contact from "@/pages/Contact";
@@ -22,7 +21,6 @@ function Router() {
         <Switch>
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/course" component={Course} />
           <Route path="/membership" component={Membership} />
           <Route path="/events" component={Events} />
           <Route path="/contact" component={Contact} />

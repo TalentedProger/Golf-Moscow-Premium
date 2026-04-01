@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @plugin "@tailwindcss/typography";
@@ -120,7 +120,7 @@
   --chart-5: 40 40% 80%;
 
   --app-font-sans: 'Inter', sans-serif;
-  --app-font-serif: 'Playfair Display', Georgia, serif;
+  --app-font-serif: 'Bebas Neue', 'Inter', sans-serif;
   --app-font-mono: Menlo, monospace;
   --radius: .75rem;
 
@@ -231,8 +231,14 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 
+  * {
+    font-style: normal !important;
+    font-style: normal;
+  }
+
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Bebas Neue', 'Inter', sans-serif;
+    font-weight: 400;
   }
 }
 
@@ -306,7 +312,7 @@
   }
 
   .font-serif {
-    font-family: 'Playfair Display', Georgia, serif !important;
+    font-family: 'Bebas Neue', 'Inter', sans-serif !important;
   }
 
   .text-gradient-green {

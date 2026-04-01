@@ -6,7 +6,6 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { href: "/", label: "Главная" },
   { href: "/about", label: "О клубе" },
-  { href: "/course", label: "Гольф-поле" },
   { href: "/membership", label: "Членство" },
   { href: "/events", label: "Мероприятия" },
   { href: "/contact", label: "Контакты" },

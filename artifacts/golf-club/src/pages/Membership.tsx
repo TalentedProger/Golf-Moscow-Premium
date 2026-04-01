@@ -1,37 +1,34 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Check, ArrowRight, Star, Shield, Trophy, Crown } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import heroImg from "@/assets/hero-aerial.png";
 import membersImg from "@/assets/members.png";
 import clubhouseImg from "@/assets/clubhouse.png";
 import restaurantImg from "@/assets/restaurant.png";
+import heroImg from "@/assets/hero-aerial.png";
 
 const plans = [
   {
     id: "social",
-    name: "Социальное",
+    name: "СОЦИАЛЬНОЕ",
     price: "от 200 000",
     period: "/ год",
-    icon: Star,
     desc: "Доступ к клубной инфраструктуре без права игры на поле",
     features: [
       "Клубхаус и ресторан",
       "Участие в клубных событиях",
       "Спа и фитнес-центр",
-      "До 5 гостевых приглашений/год",
+      "До 5 гостевых приглашений / год",
       "Деловые переговорные",
       "Парковка на территории",
     ],
     highlight: false,
-    color: "#4A8862",
   },
   {
     id: "full",
-    name: "Полное",
+    name: "ПОЛНОЕ",
     price: "от 500 000",
     period: "/ год",
-    icon: Shield,
     desc: "Полный доступ к полю и всем услугам клуба",
     features: [
       "Неограниченная игра на поле",
@@ -43,14 +40,12 @@ const plans = [
       "Участие в рейтинге клуба",
     ],
     highlight: true,
-    color: "#1C3A2B",
   },
   {
     id: "resident",
-    name: "Резидентское",
+    name: "РЕЗИДЕНТСКОЕ",
     price: "от 1 200 000",
     period: "/ год",
-    icon: Crown,
     desc: "Эксклюзивное членство с максимальными привилегиями",
     features: [
       "Всё из «Полного» членства",
@@ -62,7 +57,6 @@ const plans = [
       "Доступ к партнёрским клубам",
     ],
     highlight: false,
-    color: "#C9A96E",
   },
 ];
 
@@ -76,107 +70,123 @@ const faqs = [
 export default function Membership() {
   return (
     <div className="overflow-x-hidden">
-      {/* HERO */}
-      <section className="relative pt-28 min-h-[60vh] flex items-end pb-16 overflow-hidden">
+
+      {/* ═══════════════════════════════════════════
+          HERO
+      ═══════════════════════════════════════════ */}
+      <section className="relative min-h-[65vh] flex flex-col justify-end overflow-hidden">
         <div className="absolute inset-0">
           <img src={membersImg} alt="Members" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#1C3A2B] via-[#1C3A2B]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         </div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 md:px-12 pb-20 pt-40 w-full">
           <AnimatedSection>
-            <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-semibold mb-4">Членство</p>
-            <h1 className="font-serif font-bold text-white mb-4" style={{ fontSize: "clamp(2.5rem, 6vw, 5rem)" }}>
-              Стать частью Verde
+            <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-semibold mb-5">Членство</p>
+            <h1
+              className="font-serif text-white uppercase leading-[0.93] mb-6"
+              style={{ fontSize: "clamp(2.8rem, 7vw, 6rem)", letterSpacing: "0.02em" }}
+            >
+              СТАТЬ ЧАСТЬЮ<br />VERDE
             </h1>
-            <p className="text-white/65 max-w-xl" style={{ fontSize: "clamp(0.95rem, 1.8vw, 1.15rem)" }}>
+            <p className="text-white/60 max-w-xl leading-relaxed" style={{ fontSize: "clamp(0.95rem, 1.6vw, 1.1rem)" }}>
               Ограниченное число мест. Индивидуальный подход. Закрытое сообщество профессионалов.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* INTRO */}
-      <section className="py-20 bg-[#F5F0E8] noise-bg">
-        <div className="max-w-3xl mx-auto px-4 text-center">
+      {/* ═══════════════════════════════════════════
+          PHILOSOPHY LINE
+      ═══════════════════════════════════════════ */}
+      <section className="bg-[#F5F0E8] py-24 border-b border-[#1C3A2B]/10">
+        <div className="max-w-3xl mx-auto px-6 md:px-12 text-center">
           <AnimatedSection>
-            <p className="text-[#4A8862] text-xs tracking-[0.3em] uppercase font-semibold mb-4">Наш подход</p>
-            <h2 className="font-serif font-bold text-[#1C3A2B] mb-6" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)" }}>
-              Членство — это не статус. Это образ жизни.
+            <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-5">Наш подход</p>
+            <h2
+              className="font-serif text-[#1C3A2B] uppercase leading-tight"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", letterSpacing: "0.02em" }}
+            >
+              ЧЛЕНСТВО — ЭТО<br />ОБРАЗ ЖИЗНИ
             </h2>
-            <p className="text-[#1C3A2B]/60 leading-relaxed" style={{ fontSize: "clamp(0.95rem, 1.5vw, 1.1rem)" }}>
-              Мы не продаём доступ к полю. Мы приглашаем в сообщество людей, для которых важен баланс между достижением целей и качественным восстановлением.
-            </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* PLANS */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <AnimatedSection className="text-center mb-16">
-            <p className="text-[#4A8862] text-xs tracking-[0.3em] uppercase font-semibold mb-3">Тарифы</p>
-            <h2 className="font-serif font-bold text-[#1C3A2B]" style={{ fontSize: "clamp(2rem, 4vw, 3rem)" }}>
-              Выберите своё членство
+      {/* ═══════════════════════════════════════════
+          PLANS — editorial table layout
+      ═══════════════════════════════════════════ */}
+      <section className="bg-white py-0">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <AnimatedSection className="pt-20 pb-12">
+            <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-3">Тарифы</p>
+            <h2
+              className="font-serif text-[#1C3A2B] uppercase leading-tight"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", letterSpacing: "0.02em" }}
+            >
+              ВЫБЕРИТЕ<br />СВОЁ ЧЛЕНСТВО
             </h2>
           </AnimatedSection>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+
+          {/* Three-column plan layout — no rounded cards, uses borders */}
+          <div className="grid grid-cols-1 md:grid-cols-3 border-t border-[#1C3A2B]/15 pb-20">
             {plans.map((plan, i) => (
-              <AnimatedSection key={plan.id} delay={i * 0.12} direction="up">
+              <AnimatedSection key={plan.id} delay={i * 0.1}>
                 <motion.div
-                  whileHover={{ y: -6 }}
-                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className={`relative p-8 rounded-3xl border-2 transition-all duration-300 ${
-                    plan.highlight
-                      ? "bg-[#1C3A2B] border-[#1C3A2B] shadow-2xl"
-                      : "bg-white border-[#1C3A2B]/12 hover:border-[#1C3A2B]/30 shadow-md hover:shadow-xl"
-                  }`}
+                  className={`p-10 h-full flex flex-col border-r border-[#1C3A2B]/10 last:border-r-0 ${plan.highlight ? "bg-[#1C3A2B]" : "bg-white"}`}
                 >
                   {plan.highlight && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#C9A96E] text-[#1C3A2B] text-xs font-bold tracking-wider rounded-full uppercase">
-                      Популярный
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#C9A96E]/20 border border-[#C9A96E]/30 mb-4 self-start">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C9A96E]" />
+                      <span className="text-[#C9A96E] text-xs font-semibold tracking-[0.15em] uppercase">Популярный</span>
                     </div>
                   )}
 
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${
-                    plan.highlight ? "bg-[#C9A96E]/20" : "bg-[#1C3A2B]/8"
-                  }`}>
-                    <plan.icon size={20} className={plan.highlight ? "text-[#C9A96E]" : "text-[#1C3A2B]"} />
-                  </div>
-
-                  <h3 className={`font-serif font-bold text-xl mb-1 ${plan.highlight ? "text-white" : "text-[#1C3A2B]"}`}>
+                  <h3
+                    className={`font-serif uppercase leading-tight mb-2 ${plan.highlight ? "text-white" : "text-[#1C3A2B]"}`}
+                    style={{ fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)", letterSpacing: "0.03em" }}
+                  >
                     {plan.name}
                   </h3>
-                  <p className={`text-sm mb-5 ${plan.highlight ? "text-white/55" : "text-[#1C3A2B]/55"}`}>
+
+                  <p className={`text-xs mb-6 leading-relaxed ${plan.highlight ? "text-white/50" : "text-[#1C3A2B]/50"}`}>
                     {plan.desc}
                   </p>
 
-                  <div className="mb-6">
-                    <span className={`font-serif font-bold ${plan.highlight ? "text-white" : "text-[#1C3A2B]"}`} style={{ fontSize: "clamp(1.5rem, 3vw, 2rem)" }}>
+                  <div className="mb-8 pb-8 border-b border-current/10">
+                    <span
+                      className={`font-serif uppercase ${plan.highlight ? "text-[#C9A96E]" : "text-[#1C3A2B]"}`}
+                      style={{ fontSize: "clamp(1.8rem, 3vw, 2.6rem)", letterSpacing: "0.02em" }}
+                    >
                       {plan.price}
                     </span>
-                    <span className={`text-sm ml-1 ${plan.highlight ? "text-white/50" : "text-[#1C3A2B]/50"}`}>
+                    <span className={`text-xs ml-2 ${plan.highlight ? "text-white/40" : "text-[#1C3A2B]/40"}`}>
                       {plan.period}
                     </span>
                   </div>
 
-                  <ul className="space-y-2.5 mb-8">
+                  <ul className="space-y-3 mb-10 flex-1">
                     {plan.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5 text-sm">
-                        <Check size={15} className={`mt-0.5 shrink-0 ${plan.highlight ? "text-[#C9A96E]" : "text-[#4A8862]"}`} />
-                        <span className={plan.highlight ? "text-white/75" : "text-[#1C3A2B]/75"}>{f}</span>
+                      <li key={f} className="flex items-start gap-3 text-sm">
+                        <Check
+                          size={14}
+                          className={`mt-0.5 shrink-0 ${plan.highlight ? "text-[#C9A96E]" : "text-[#4A8862]"}`}
+                        />
+                        <span className={plan.highlight ? "text-white/70" : "text-[#1C3A2B]/70"}>{f}</span>
                       </li>
                     ))}
                   </ul>
 
                   <Link href="/contact">
-                    <span className={`block text-center py-3 px-6 rounded-full font-semibold text-sm cursor-pointer transition-all ${
-                      plan.highlight
-                        ? "bg-[#C9A96E] text-[#1C3A2B] hover:bg-[#E4C99A]"
-                        : "bg-[#1C3A2B] text-white hover:bg-[#2D5A40]"
-                    }`}
-                    data-testid={`membership-cta-${plan.id}`}
+                    <span
+                      className={`inline-flex items-center gap-2 px-7 py-3.5 text-sm font-semibold tracking-wide cursor-pointer transition-all duration-300 ${
+                        plan.highlight
+                          ? "bg-[#C9A96E] text-[#1C3A2B] hover:bg-[#E4C99A]"
+                          : "bg-[#1C3A2B] text-white hover:bg-[#2D5A40]"
+                      }`}
+                      style={{ borderRadius: "2px" }}
+                      data-testid={`membership-cta-${plan.id}`}
                     >
-                      Подать заявку
+                      Подать заявку <ArrowRight size={14} />
                     </span>
                   </Link>
                 </motion.div>
@@ -186,60 +196,70 @@ export default function Membership() {
         </div>
       </section>
 
-      {/* BENEFITS */}
-      <section className="py-24 bg-[#1C3A2B] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: `url(${clubhouseImg})`, backgroundSize: "cover" }} />
-        <div className="absolute inset-0 bg-[#1C3A2B]/90" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <AnimatedSection direction="right">
-              <div>
-                <p className="text-[#C9A96E] text-xs tracking-[0.3em] uppercase font-semibold mb-4">Привилегии</p>
-                <h2 className="font-serif font-bold text-white mb-6" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.6rem)" }}>
-                  Больше, чем просто гольф
-                </h2>
-                <div className="space-y-4">
-                  {[
-                    { title: "Партнёрские клубы", desc: "Доступ к 50+ клубам-партнёрам в России и Европе" },
-                    { title: "Деловые связи", desc: "Нетворкинг среди предпринимателей и топ-менеджеров" },
-                    { title: "Семейная программа", desc: "Академия гольфа для детей, семейные мероприятия" },
-                    { title: "Эксклюзивные события", desc: "Закрытые турниры, гастрономические вечера, арт-показы" },
-                  ].map((b) => (
-                    <div key={b.title} className="flex gap-4 p-4 rounded-xl bg-white/6 border border-white/10">
-                      <div className="w-2 h-2 rounded-full bg-[#C9A96E] mt-2 shrink-0" />
-                      <div>
-                        <div className="text-white font-medium text-sm mb-1">{b.title}</div>
-                        <div className="text-white/50 text-xs">{b.desc}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </AnimatedSection>
-            <AnimatedSection direction="left" delay={0.2}>
-              <div className="rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl">
-                <img src={restaurantImg} alt="Club restaurant" className="w-full h-full object-cover" />
-              </div>
-            </AnimatedSection>
+      {/* ═══════════════════════════════════════════
+          BENEFITS — full bleed split
+      ═══════════════════════════════════════════ */}
+      <section className="grid grid-cols-1 lg:grid-cols-2">
+        <AnimatedSection direction="right" className="overflow-hidden">
+          <div className="h-full min-h-[400px] overflow-hidden">
+            <img
+              src={restaurantImg}
+              alt="Club restaurant"
+              className="w-full h-full object-cover"
+              style={{ minHeight: "500px" }}
+            />
           </div>
-        </div>
+        </AnimatedSection>
+
+        <AnimatedSection direction="left" delay={0.15} className="bg-[#1C3A2B] flex items-center">
+          <div className="px-10 md:px-16 py-20">
+            <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-5">Привилегии</p>
+            <h2
+              className="font-serif text-white uppercase leading-tight mb-10"
+              style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", letterSpacing: "0.02em" }}
+            >
+              БОЛЬШЕ,<br />ЧЕМ ПРОСТО<br />ГОЛЬФ
+            </h2>
+            <div className="space-y-6">
+              {[
+                { title: "Партнёрские клубы", desc: "Доступ к 50+ клубам-партнёрам в России и Европе" },
+                { title: "Деловые связи", desc: "Нетворкинг среди предпринимателей и топ-менеджеров" },
+                { title: "Семейная программа", desc: "Академия гольфа для детей, семейные мероприятия" },
+                { title: "Эксклюзивные события", desc: "Закрытые турниры, гастрономические вечера, арт-показы" },
+              ].map((b, i) => (
+                <div key={b.title} className={`flex gap-4 ${i < 3 ? "pb-6 border-b border-white/10" : ""}`}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C9A96E] mt-2 shrink-0" />
+                  <div>
+                    <div className="text-white font-semibold text-sm mb-1">{b.title}</div>
+                    <div className="text-white/45 text-xs leading-relaxed">{b.desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
       </section>
 
-      {/* FAQ */}
+      {/* ═══════════════════════════════════════════
+          FAQ — accordion-style without cards
+      ═══════════════════════════════════════════ */}
       <section className="py-24 bg-[#F5F0E8]">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <AnimatedSection className="text-center mb-12">
-            <p className="text-[#4A8862] text-xs tracking-[0.3em] uppercase font-semibold mb-3">Вопросы и ответы</p>
-            <h2 className="font-serif font-bold text-[#1C3A2B]" style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.5rem)" }}>
-              Часто задаваемые вопросы
+        <div className="max-w-3xl mx-auto px-6 md:px-12">
+          <AnimatedSection className="mb-12">
+            <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-3">FAQ</p>
+            <h2
+              className="font-serif text-[#1C3A2B] uppercase leading-tight"
+              style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", letterSpacing: "0.02em" }}
+            >
+              ЧАСТО<br />ЗАДАВАЕМЫЕ<br />ВОПРОСЫ
             </h2>
           </AnimatedSection>
-          <div className="space-y-4">
+          <div className="divide-y divide-[#1C3A2B]/12">
             {faqs.map((faq, i) => (
               <AnimatedSection key={i} delay={i * 0.08}>
-                <div className="p-6 bg-white rounded-2xl border border-[#1C3A2B]/8 hover:shadow-md transition-shadow">
-                  <h3 className="font-semibold text-[#1C3A2B] mb-2 text-sm">{faq.q}</h3>
-                  <p className="text-[#1C3A2B]/60 text-sm leading-relaxed">{faq.a}</p>
+                <div className="py-6">
+                  <h3 className="font-semibold text-[#1C3A2B] mb-2.5 text-sm tracking-wide">{faq.q}</h3>
+                  <p className="text-[#1C3A2B]/55 text-sm leading-relaxed">{faq.a}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -247,22 +267,40 @@ export default function Membership() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-[#1C3A2B]">
-        <div className="max-w-2xl mx-auto px-4 text-center">
+      {/* ═══════════════════════════════════════════
+          FINAL CTA
+      ═══════════════════════════════════════════ */}
+      <section className="relative overflow-hidden py-32">
+        <div
+          className="absolute inset-0"
+          style={{ backgroundImage: `url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
+        />
+        <div className="absolute inset-0 bg-[#1C3A2B]/88" />
+        <div className="relative max-w-2xl mx-auto px-6 text-center">
           <AnimatedSection>
-            <h2 className="font-serif font-bold text-white mb-4" style={{ fontSize: "clamp(1.8rem, 4vw, 2.6rem)" }}>
-              Начните свой путь в Verde
+            <h2
+              className="font-serif text-white uppercase leading-tight mb-5"
+              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "0.02em" }}
+            >
+              НАЧНИТЕ СВОЙ<br />ПУТЬ В VERDE
             </h2>
-            <p className="text-white/50 mb-8 text-sm">Места ограничены. Подайте заявку сегодня.</p>
+            <p className="text-white/50 mb-10 text-sm">Места ограничены. Подайте заявку сегодня.</p>
             <Link href="/contact">
-              <span className="inline-flex items-center gap-2 px-8 py-4 bg-[#C9A96E] text-[#1C3A2B] rounded-full font-semibold cursor-pointer hover:bg-[#E4C99A] transition-colors" data-testid="membership-final-cta">
-                Подать заявку <ArrowRight size={16} />
+              <span
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-[#C9A96E] text-[#1C3A2B] cursor-pointer hover:bg-[#E4C99A] transition-colors font-semibold text-sm tracking-wide"
+                style={{ borderRadius: "4px" }}
+                data-testid="membership-final-cta"
+              >
+                Подать заявку
+                <span className="w-7 h-7 rounded-full bg-[#1C3A2B] flex items-center justify-center">
+                  <ArrowRight size={13} className="text-white" />
+                </span>
               </span>
             </Link>
           </AnimatedSection>
         </div>
       </section>
+
     </div>
   );
 }
