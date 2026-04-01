@@ -74,7 +74,7 @@ export default function Home() {
   const heroScale = useTransform(scrollYProgress, [0, 1], [1.06, 1.0]);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden bg-white">
 
       {/* ═══════════════════════════════════════════
           HERO
@@ -217,7 +217,37 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          COURSE — ПОЛЕ ЧЕМПИОНСКОГО КЛАССА (now after Lifestyle)
+          ABOUT SPLIT
+      ═══════════════════════════════════════════ */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[560px]">
+        <AnimatedSection direction="right" className="overflow-hidden">
+          <div className="h-full min-h-[360px] lg:min-h-[560px] overflow-hidden">
+            <img src={clubhouseImg} alt="Verde Clubhouse" className="w-full h-full object-cover" />
+          </div>
+        </AnimatedSection>
+        <AnimatedSection direction="left" delay={0.15} className="bg-[#1C3A2B] flex items-center">
+          <div className="px-8 sm:px-12 md:px-16 py-16 md:py-20">
+            <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-5">О клубе</p>
+            <h2 className="font-serif text-white uppercase leading-tight mb-7" style={{ fontSize: "clamp(2rem, 4vw, 3.6rem)", letterSpacing: "0.02em" }}>
+              МЕСТО, ГДЕ<br />ВРЕМЯ<br />ЗАМЕДЛЯЕТСЯ
+            </h2>
+            <p className="text-white/55 leading-relaxed mb-5 text-sm md:text-base">
+              Verde Golf Club — закрытое пространство для тех, кто ценит гольф и искусство безупречного отдыха. Расположен в 40 минутах от Москвы.
+            </p>
+            <p className="text-white/55 leading-relaxed mb-10 text-sm md:text-base">
+              18-луночный курс чемпионского уровня, мировая кухня и нетворкинг среди лидеров бизнеса.
+            </p>
+            <Link href="/about">
+              <span className="group inline-flex items-center gap-2 text-white font-semibold text-sm tracking-wide cursor-pointer border-b border-white/30 pb-1 hover:border-[#C9A96E] hover:text-[#C9A96E] transition-all duration-300" data-testid="home-about-link">
+                О клубе <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
+              </span>
+            </Link>
+          </div>
+        </AnimatedSection>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          COURSE — ПОЛЕ ЧЕМПИОНСКОГО КЛАССА
       ═══════════════════════════════════════════ */}
       <section className="py-20 md:py-28" style={{ margin: "0 16px" }}>
         <AnimatedSection className="mb-12 md:mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
@@ -269,39 +299,9 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          ABOUT SPLIT
-      ═══════════════════════════════════════════ */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[560px]">
-        <AnimatedSection direction="right" className="overflow-hidden">
-          <div className="h-full min-h-[360px] lg:min-h-[560px] overflow-hidden">
-            <img src={clubhouseImg} alt="Verde Clubhouse" className="w-full h-full object-cover" />
-          </div>
-        </AnimatedSection>
-        <AnimatedSection direction="left" delay={0.15} className="bg-[#1C3A2B] flex items-center">
-          <div className="px-8 sm:px-12 md:px-16 py-16 md:py-20">
-            <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-5">О клубе</p>
-            <h2 className="font-serif text-white uppercase leading-tight mb-7" style={{ fontSize: "clamp(2rem, 4vw, 3.6rem)", letterSpacing: "0.02em" }}>
-              МЕСТО, ГДЕ<br />ВРЕМЯ<br />ЗАМЕДЛЯЕТСЯ
-            </h2>
-            <p className="text-white/55 leading-relaxed mb-5 text-sm md:text-base">
-              Verde Golf Club — закрытое пространство для тех, кто ценит гольф и искусство безупречного отдыха. Расположен в 40 минутах от Москвы.
-            </p>
-            <p className="text-white/55 leading-relaxed mb-10 text-sm md:text-base">
-              18-луночный курс чемпионского уровня, мировая кухня и нетворкинг среди лидеров бизнеса.
-            </p>
-            <Link href="/about">
-              <span className="group inline-flex items-center gap-2 text-white font-semibold text-sm tracking-wide cursor-pointer border-b border-white/30 pb-1 hover:border-[#C9A96E] hover:text-[#C9A96E] transition-all duration-300" data-testid="home-about-link">
-                О клубе <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform" />
-              </span>
-            </Link>
-          </div>
-        </AnimatedSection>
-      </section>
-
-      {/* ═══════════════════════════════════════════
           TESTIMONIALS — image background, bottom margin
       ═══════════════════════════════════════════ */}
-      <section style={{ margin: "0 16px 16px 16px" }}>
+      <section style={{ margin: "16px 16px 16px 16px" }}>
         <div className="relative rounded-3xl overflow-hidden px-6 sm:px-10 md:px-14 py-14 md:py-20">
           {/* Background image */}
           <div className="absolute inset-0">
