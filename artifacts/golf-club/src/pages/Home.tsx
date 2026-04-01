@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowUpRight, ArrowRight, Trophy, Users, Leaf, Shield, Dumbbell, UtensilsCrossed, Briefcase, Calendar } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Quote } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import CounterStat from "@/components/ui/CounterStat";
 import heroImg from "@/assets/hero-aerial.png";
@@ -57,14 +57,14 @@ export default function Home() {
     <div className="overflow-x-hidden">
 
       {/* ═══════════════════════════════════════════
-          HERO — card shape, same inset as navbar
+          HERO
       ═══════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative flex flex-col justify-end overflow-hidden rounded-2xl"
+        className="relative flex flex-col justify-end overflow-hidden rounded-3xl"
         style={{
-          margin: "86px 16px 0 16px",
-          minHeight: "calc(100vh - 110px)",
+          margin: "100px 16px 0 16px",
+          minHeight: "calc(100vh - 120px)",
         }}
       >
         {/* Background image */}
@@ -129,7 +129,7 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* RIGHT — feature pills 2×2 */}
+          {/* RIGHT — feature pills 2×2 — semi-transparent with white dots */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -139,14 +139,28 @@ export default function Home() {
             {heroPills.map((pill) => (
               <div
                 key={pill}
-                className="flex items-center gap-2 px-4 py-2.5 bg-[#1C3A2B]/80 backdrop-blur-md border border-white/10 text-white text-xs font-medium tracking-wide"
+                className="flex items-center gap-2 px-4 py-2.5 bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-medium tracking-wide"
                 style={{ borderRadius: "50px" }}
               >
-                <span className="w-1.5 h-1.5 rounded-full bg-[#4A8862] flex-shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
                 {pill}
               </div>
             ))}
           </motion.div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          STATS BAR — moved here, right after hero
+      ═══════════════════════════════════════════ */}
+      <section className="py-16 bg-[#F5F0E8] border-b border-[#1C3A2B]/10">
+        <div className="max-w-6xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#1C3A2B]/15">
+            <CounterStat value={18} label="Лунок" description="Чемпионский курс PGA" />
+            <CounterStat value={365} label="Дней" description="Открыт круглый год" />
+            <CounterStat value={120} suffix="+" label="Резидентов" description="Закрытое сообщество" />
+            <CounterStat value={2500} suffix=" м²" label="Клубхаус" description="Роскошная инфраструктура" />
+          </div>
         </div>
       </section>
 
@@ -189,183 +203,156 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          STATS BAR
+          COURSE PREVIEW — text left + rounded cards
+          Same width as hero (mx-4)
       ═══════════════════════════════════════════ */}
-      <section className="py-20 bg-[#F5F0E8] border-y border-[#1C3A2B]/10">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#1C3A2B]/15">
-            <CounterStat value={18} label="Лунок" description="Чемпионский курс PGA" />
-            <CounterStat value={365} label="Дней" description="Открыт круглый год" />
-            <CounterStat value={120} suffix="+" label="Резидентов" description="Закрытое сообщество" />
-            <CounterStat value={2500} suffix=" м²" label="Клубхаус" description="Роскошная инфраструктура" />
-          </div>
-        </div>
-      </section>
+      <section className="bg-[#0F2419] py-20 md:py-28" style={{ margin: "0" }}>
+        <div style={{ margin: "0 16px" }}>
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
 
-      {/* ═══════════════════════════════════════════
-          COURSE PREVIEW — editorial full-bleed panels
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#1C3A2B]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 pb-4">
-          <AnimatedSection>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
-              <div>
-                <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-3">Гольф-поле</p>
-                <h2
-                  className="font-serif text-white uppercase leading-tight"
-                  style={{ fontSize: "clamp(2rem, 4.5vw, 3.8rem)", letterSpacing: "0.02em" }}
-                >
-                  ПОЛЕ<br />ЧЕМПИОНСКОГО<br />КЛАССА
-                </h2>
-              </div>
+            {/* Left — text block */}
+            <AnimatedSection className="lg:w-72 xl:w-80 flex-shrink-0 lg:sticky lg:top-32">
+              <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Гольф-поле</p>
+              <h2
+                className="font-serif text-white uppercase leading-tight mb-8"
+                style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", letterSpacing: "0.02em" }}
+              >
+                ПОЛЕ<br />ЧЕМПИОНСКОГО<br />КЛАССА
+              </h2>
               <Link href="/about">
                 <span className="group inline-flex items-center gap-2 text-white/50 hover:text-white text-sm tracking-wide cursor-pointer transition-colors border-b border-white/20 pb-1 hover:border-white/60">
                   Подробнее <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
                 </span>
               </Link>
-            </div>
-          </AnimatedSection>
-        </div>
+            </AnimatedSection>
 
-        {/* Three panels side-by-side */}
-        <div className="grid grid-cols-1 md:grid-cols-3">
-          {[
-            { img: waterHazardImg, title: "Водные препятствия", desc: "7 водных объектов, стратегическая глубина каждой лунки" },
-            { img: equipmentImg, title: "Качество грина", desc: "Профессиональный уход по стандартам Augusta National" },
-            { img: coachingImg, title: "Тренировочная зона", desc: "Driving range, паттинг грин, бункерный тренажёр" },
-          ].map((item, i) => (
-            <AnimatedSection key={item.title} delay={i * 0.1}>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="relative overflow-hidden cursor-pointer"
-                style={{ aspectRatio: "3/4" }}
-              >
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-7">
-                  <h3
-                    className="font-serif text-white uppercase mb-2 leading-tight"
-                    style={{ fontSize: "clamp(1.2rem, 2vw, 1.7rem)", letterSpacing: "0.03em" }}
+            {/* Right — 3 rounded cards */}
+            <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                { img: waterHazardImg, title: "Водные препятствия", desc: "7 водных объектов, стратегическая глубина каждой лунки" },
+                { img: equipmentImg, title: "Качество грина", desc: "Профессиональный уход по стандартам Augusta National" },
+                { img: coachingImg, title: "Тренировочная зона", desc: "Driving range, паттинг грин, бункерный тренажёр" },
+              ].map((item, i) => (
+                <AnimatedSection key={item.title} delay={i * 0.12}>
+                  <motion.div
+                    whileHover={{ y: -4 }}
+                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative overflow-hidden rounded-2xl cursor-pointer"
+                    style={{ aspectRatio: "3/4" }}
                   >
-                    {item.title}
-                  </h3>
-                  <p className="text-white/55 text-xs leading-relaxed">{item.desc}</p>
-                </div>
-              </motion.div>
-            </AnimatedSection>
-          ))}
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          LIFESTYLE — asymmetric editorial grid
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#F5F0E8] py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <AnimatedSection className="mb-16">
-            <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Клубная жизнь</p>
-            <h2
-              className="font-serif text-[#1C3A2B] uppercase leading-tight"
-              style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)", letterSpacing: "0.02em" }}
-            >
-              ГОЛЬФ — ЭТО<br />СОСТОЯНИЕ ДУШИ
-            </h2>
-          </AnimatedSection>
-
-          {/* Asymmetric grid */}
-          <div className="grid grid-cols-12 gap-4 md:gap-6">
-            {/* Large image left */}
-            <AnimatedSection direction="right" className="col-span-12 md:col-span-7">
-              <div className="overflow-hidden" style={{ aspectRatio: "16/11" }}>
-                <img src={membersImg} alt="Members" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-              </div>
-            </AnimatedSection>
-
-            {/* Right column — text + image */}
-            <div className="col-span-12 md:col-span-5 flex flex-col gap-4 md:gap-6">
-              <AnimatedSection direction="left" delay={0.1} className="bg-[#1C3A2B] p-10 flex flex-col justify-center flex-1">
-                <div className="space-y-4">
-                  {[
-                    { label: "Приватность", desc: "Ограниченное число резидентов" },
-                    { label: "Сервис 24/7", desc: "Персональный консьерж" },
-                    { label: "Локация", desc: "40 мин от центра Москвы" },
-                    { label: "Family", desc: "Академия для детей и семей" },
-                  ].map((item, i) => (
-                    <div key={item.label} className={`flex items-start gap-4 ${i < 3 ? "pb-4 border-b border-white/10" : ""}`}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#C9A96E] mt-2 flex-shrink-0" />
-                      <div>
-                        <div className="text-white font-semibold text-sm">{item.label}</div>
-                        <div className="text-white/45 text-xs">{item.desc}</div>
-                      </div>
+                    <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6">
+                      <h3
+                        className="font-serif text-white uppercase mb-2 leading-tight"
+                        style={{ fontSize: "clamp(1.1rem, 1.8vw, 1.5rem)", letterSpacing: "0.03em" }}
+                      >
+                        {item.title}
+                      </h3>
+                      <p className="text-white/60 text-xs leading-relaxed">{item.desc}</p>
                     </div>
-                  ))}
-                </div>
-              </AnimatedSection>
-
-              <AnimatedSection direction="left" delay={0.2} className="overflow-hidden flex-1">
-                <div className="h-full min-h-[200px] overflow-hidden" style={{ aspectRatio: "4/3" }}>
-                  <img src={restaurantImg} alt="Restaurant" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-                </div>
-              </AnimatedSection>
+                  </motion.div>
+                </AnimatedSection>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          TESTIMONIALS — stripped back, editorial
+          LIFESTYLE — single image editorial
       ═══════════════════════════════════════════ */}
-      <section className="py-24 bg-white border-y border-[#1C3A2B]/8">
-        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
-          <AnimatedSection>
-            <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Отзывы резидентов</p>
+      <section className="bg-[#F5F0E8] py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            {/* Text block */}
+            <AnimatedSection direction="right">
+              <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Клубная жизнь</p>
+              <h2
+                className="font-serif text-[#1C3A2B] uppercase leading-tight mb-8"
+                style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)", letterSpacing: "0.02em" }}
+              >
+                ГОЛЬФ — ЭТО<br />СОСТОЯНИЕ ДУШИ
+              </h2>
+              <div className="space-y-5">
+                {[
+                  { label: "Приватность", desc: "Ограниченное число резидентов" },
+                  { label: "Сервис 24/7", desc: "Персональный консьерж" },
+                  { label: "Локация", desc: "40 мин от центра Москвы" },
+                  { label: "Family", desc: "Академия для детей и семей" },
+                ].map((item, i) => (
+                  <div key={item.label} className={`flex items-start gap-4 ${i < 3 ? "pb-5 border-b border-[#1C3A2B]/10" : ""}`}>
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A96E] mt-2 flex-shrink-0" />
+                    <div>
+                      <div className="text-[#1C3A2B] font-semibold text-sm">{item.label}</div>
+                      <div className="text-[#1C3A2B]/50 text-xs mt-0.5">{item.desc}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </AnimatedSection>
+
+            {/* Single image */}
+            <AnimatedSection direction="left" delay={0.15}>
+              <div className="overflow-hidden rounded-3xl" style={{ aspectRatio: "4/5" }}>
+                <img
+                  src={membersImg}
+                  alt="Club members"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          TESTIMONIALS — redesigned editorial cards
+      ═══════════════════════════════════════════ */}
+      <section className="py-24 md:py-32 bg-[#1C3A2B]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <AnimatedSection className="mb-16">
+            <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Отзывы резидентов</p>
             <h2
-              className="font-serif text-[#1C3A2B] uppercase leading-tight mb-16"
+              className="font-serif text-white uppercase leading-tight"
               style={{ fontSize: "clamp(1.8rem, 3.5vw, 3rem)", letterSpacing: "0.02em" }}
             >
               ЧТО ГОВОРЯТ<br />НАШИ ЧЛЕНЫ
             </h2>
           </AnimatedSection>
 
-          <div className="relative min-h-[200px] flex items-center justify-center">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeTestimonial}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -16 }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="text-center px-4"
-              >
-                <div className="text-[#C9A96E] text-6xl font-bold leading-none mb-4" style={{ fontFamily: "Georgia, serif" }}>"</div>
-                <blockquote
-                  className="text-[#1C3A2B]/75 leading-relaxed mb-8"
-                  style={{ fontSize: "clamp(1rem, 2vw, 1.25rem)" }}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {testimonials.map((t, i) => (
+              <AnimatedSection key={t.name} delay={i * 0.12}>
+                <motion.div
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="bg-white/6 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col justify-between h-full cursor-default"
+                  style={{ minHeight: "280px" }}
                 >
-                  {testimonials[activeTestimonial].quote}
-                </blockquote>
-                <div className="flex items-center justify-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-[#1C3A2B] flex items-center justify-center text-white text-xs font-bold">
-                    {testimonials[activeTestimonial].initials}
+                  {/* Quote icon */}
+                  <div className="mb-6">
+                    <div className="w-10 h-10 rounded-full bg-[#C9A96E]/15 flex items-center justify-center mb-6">
+                      <Quote size={18} className="text-[#C9A96E]" />
+                    </div>
+                    <p className="text-white/75 leading-relaxed text-sm md:text-base">
+                      {t.quote}
+                    </p>
                   </div>
-                  <div className="text-left">
-                    <div className="font-bold text-[#1C3A2B] text-sm">{testimonials[activeTestimonial].name}</div>
-                    <div className="text-[#1C3A2B]/45 text-xs">{testimonials[activeTestimonial].title}</div>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
 
-          <div className="flex justify-center gap-2 mt-10">
-            {testimonials.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveTestimonial(i)}
-                className={`h-1 rounded-full transition-all duration-400 ${i === activeTestimonial ? "w-10 bg-[#1C3A2B]" : "w-2 bg-[#1C3A2B]/20"}`}
-                data-testid={`testimonial-dot-${i}`}
-              />
+                  {/* Author */}
+                  <div className="flex items-center gap-3 pt-6 border-t border-white/10">
+                    <div className="w-10 h-10 rounded-full bg-[#C9A96E]/20 flex items-center justify-center text-[#C9A96E] text-xs font-bold tracking-wide flex-shrink-0">
+                      {t.initials}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-white text-sm">{t.name}</div>
+                      <div className="text-white/40 text-xs mt-0.5">{t.title}</div>
+                    </div>
+                  </div>
+                </motion.div>
+              </AnimatedSection>
             ))}
           </div>
         </div>

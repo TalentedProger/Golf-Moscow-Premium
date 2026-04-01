@@ -28,15 +28,15 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Floating nav — same horizontal inset as hero card */}
+      {/* Floating nav */}
       <motion.header
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-3 z-50 transition-all duration-400 rounded-2xl ${
+        className={`fixed top-3 z-50 transition-all duration-400 rounded-[2rem] ${
           scrolled
-            ? "bg-white shadow-md border border-[#1C3A2B]/12"
-            : "bg-white/90 backdrop-blur-sm shadow-sm border border-[#1C3A2B]/10"
+            ? "bg-[#0F2419]/85 backdrop-blur-xl shadow-xl border border-white/10"
+            : "bg-[#0F2419]/70 backdrop-blur-lg shadow-md border border-white/8"
         }`}
         style={{ left: "16px", right: "16px" }}
       >
@@ -46,23 +46,23 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/">
               <span className="flex items-center gap-2 cursor-pointer group">
-                <span className="font-serif tracking-[0.12em] text-[#1C3A2B] text-base md:text-lg">
+                <span className="font-serif tracking-[0.12em] text-white text-base md:text-lg">
                   VERDE
                 </span>
-                <span className="text-xs tracking-[0.22em] uppercase text-[#4A8862] font-medium hidden sm:block">
+                <span className="text-xs tracking-[0.22em] uppercase text-white/60 font-medium hidden sm:block">
                   Golf Club
                 </span>
               </span>
             </Link>
 
-            {/* Desktop nav — pill-shaped active indicator */}
-            <nav className="hidden md:flex items-center gap-1 bg-[#F5F0E8]/70 rounded-full px-2 py-1.5">
+            {/* Desktop nav — no background on the container, only on active/hover pills */}
+            <nav className="hidden md:flex items-center gap-0.5 px-1 py-1">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
                   <span className={`relative px-4 py-1.5 text-sm font-medium tracking-wide cursor-pointer transition-all duration-250 rounded-full ${
                     location === link.href
-                      ? "bg-[#1C3A2B] text-white shadow-sm"
-                      : "text-[#1C3A2B]/70 hover:text-[#1C3A2B] hover:bg-[#1C3A2B]/8"
+                      ? "bg-white/15 text-white shadow-sm"
+                      : "text-white/60 hover:text-white hover:bg-white/10"
                   }`}>
                     {link.label}
                   </span>
@@ -74,7 +74,7 @@ export default function Navbar() {
             <div className="hidden md:flex items-center">
               <Link href="/contact">
                 <span
-                  className="px-5 py-2 bg-[#1C3A2B] text-white text-sm font-medium tracking-wide cursor-pointer hover:bg-[#2D5A40] transition-colors duration-250 rounded-full"
+                  className="px-5 py-2 bg-white/15 hover:bg-white/25 text-white text-sm font-medium tracking-wide cursor-pointer transition-colors duration-250 rounded-full border border-white/20"
                   data-testid="nav-cta"
                 >
                   Записаться
@@ -84,7 +84,7 @@ export default function Navbar() {
 
             {/* Mobile burger */}
             <button
-              className="md:hidden p-2 text-[#1C3A2B] hover:bg-[#1C3A2B]/8 rounded-lg transition-colors"
+              className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
               data-testid="nav-mobile-toggle"
             >
@@ -102,7 +102,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-40 bg-[#1C3A2B] flex flex-col pt-20"
+            className="fixed inset-0 z-40 bg-[#0F2419]/95 backdrop-blur-xl flex flex-col pt-20"
           >
             <div className="flex flex-col items-start gap-1 px-8 pt-8">
               {navLinks.map((link, i) => (
