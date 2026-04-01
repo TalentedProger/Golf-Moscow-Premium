@@ -87,8 +87,8 @@ export default function Home() {
         ref={heroRef}
         className="relative flex flex-col justify-end overflow-hidden rounded-3xl"
         style={{
-          margin: "76px 16px 0 16px",
-          minHeight: "calc(100svh - 92px)",
+          margin: "96px 16px 0 16px",
+          minHeight: "calc(100svh - 112px)",
         }}
       >
         {/* Background image */}
@@ -237,21 +237,21 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           COURSE — text left top, cards below full width
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#0F2419] py-20 md:py-28" style={{ margin: "0 16px" }}>
+      <section className="py-20 md:py-28" style={{ margin: "0 16px" }}>
 
         {/* Header row — text aligned left */}
         <AnimatedSection className="mb-12 md:mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
           <div>
-            <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Гольф-поле</p>
+            <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Гольф-поле</p>
             <h2
-              className="font-serif text-white uppercase leading-tight"
+              className="font-serif text-[#1C3A2B] uppercase leading-tight"
               style={{ fontSize: "clamp(2rem, 3.8vw, 3.4rem)", letterSpacing: "0.02em" }}
             >
               ПОЛЕ<br />ЧЕМПИОНСКОГО<br />КЛАССА
             </h2>
           </div>
           <Link href="/about">
-            <span className="group inline-flex items-center gap-2 text-white/50 hover:text-white text-sm tracking-wide cursor-pointer transition-colors border-b border-white/20 pb-1 hover:border-white/60 whitespace-nowrap self-start sm:self-auto mb-1">
+            <span className="group inline-flex items-center gap-2 text-[#1C3A2B]/50 hover:text-[#1C3A2B] text-sm tracking-wide cursor-pointer transition-colors border-b border-[#1C3A2B]/20 pb-1 hover:border-[#1C3A2B]/60 whitespace-nowrap self-start sm:self-auto mb-1">
               Подробнее <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </span>
           </Link>
@@ -264,7 +264,7 @@ export default function Home() {
               <motion.div
                 whileHover={{ y: -5 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className="relative overflow-hidden rounded-2xl cursor-pointer flex flex-col"
+                className="relative overflow-hidden rounded-2xl cursor-pointer flex flex-col border border-[#1C3A2B]/10"
                 style={{ minHeight: "480px" }}
               >
                 {/* Image top half */}
@@ -274,32 +274,32 @@ export default function Home() {
                     alt={item.title}
                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0F2419]/60" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30" />
                   {/* Tag badge */}
                   <div className="absolute top-4 left-4">
-                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C9A96E] bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full border border-[#C9A96E]/30">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-white bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full border border-white/20">
                       {item.tag}
                     </span>
                   </div>
                 </div>
 
                 {/* Content bottom */}
-                <div className="bg-white/6 backdrop-blur-sm border border-white/8 border-t-0 rounded-b-2xl flex flex-col flex-1 p-6">
+                <div className="bg-[#F5F0E8] flex flex-col flex-1 p-6 rounded-b-2xl">
                   <h3
-                    className="font-serif text-white uppercase mb-3 leading-tight"
+                    className="font-serif text-[#1C3A2B] uppercase mb-3 leading-tight"
                     style={{ fontSize: "clamp(1.1rem, 1.6vw, 1.4rem)", letterSpacing: "0.03em" }}
                   >
                     {item.title}
                   </h3>
-                  <p className="text-white/55 text-sm leading-relaxed mb-6 flex-1">
+                  <p className="text-[#1C3A2B]/60 text-sm leading-relaxed mb-6 flex-1">
                     {item.desc}
                   </p>
                   {/* Mini stats */}
-                  <div className="grid grid-cols-2 gap-3 pt-5 border-t border-white/10">
+                  <div className="grid grid-cols-2 gap-3 pt-5 border-t border-[#1C3A2B]/10">
                     {item.stats.map((s) => (
                       <div key={s.label}>
-                        <div className="text-[#C9A96E] font-bold text-lg leading-none mb-1">{s.value}</div>
-                        <div className="text-white/35 text-[10px] uppercase tracking-wide leading-tight">{s.label}</div>
+                        <div className="text-[#4A8862] font-bold text-lg leading-none mb-1">{s.value}</div>
+                        <div className="text-[#1C3A2B]/40 text-[10px] uppercase tracking-wide leading-tight">{s.label}</div>
                       </div>
                     ))}
                   </div>
@@ -311,47 +311,80 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          LIFESTYLE — single image editorial
+          LIFESTYLE — editorial, matches reference
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#F5F0E8] py-24 md:py-32">
+      <section className="bg-white py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-            <AnimatedSection direction="right">
-              <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Клубная жизнь</p>
-              <h2
-                className="font-serif text-[#1C3A2B] uppercase leading-tight mb-8"
-                style={{ fontSize: "clamp(2rem, 5vw, 4rem)", letterSpacing: "0.02em" }}
-              >
-                ГОЛЬФ — ЭТО<br />СОСТОЯНИЕ ДУШИ
-              </h2>
-              <div className="space-y-5">
-                {[
-                  { label: "Приватность", desc: "Ограниченное число резидентов" },
-                  { label: "Сервис 24/7", desc: "Персональный консьерж" },
-                  { label: "Локация", desc: "40 мин от центра Москвы" },
-                  { label: "Family", desc: "Академия для детей и семей" },
-                ].map((item, i) => (
-                  <div key={item.label} className={`flex items-start gap-4 ${i < 3 ? "pb-5 border-b border-[#1C3A2B]/10" : ""}`}>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A96E] mt-2 flex-shrink-0" />
-                    <div>
-                      <div className="text-[#1C3A2B] font-semibold text-sm">{item.label}</div>
-                      <div className="text-[#1C3A2B]/50 text-xs mt-0.5">{item.desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {/* Top — label + large paragraph with highlighted words */}
+          <AnimatedSection className="mb-14 md:mb-16">
+            <div className="flex items-center gap-2 mb-6">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#4A8862]" />
+              <p className="text-[#1C3A2B]/55 text-sm">Философия клуба</p>
+            </div>
+            <p
+              className="text-[#1C3A2B] leading-snug font-medium max-w-3xl"
+              style={{ fontSize: "clamp(1.4rem, 2.8vw, 2.1rem)" }}
+            >
+              Verde Golf Club — это не просто{" "}
+              <span className="text-[#4A8862]">65 гектаров</span>{" "}
+              идеального ландшафта. Это закрытая экосистема, созданная для тех,
+              кому важен{" "}
+              <span className="text-[#4A8862]">баланс</span>{" "}
+              между достижением целей и качественным восстановлением.
+            </p>
+          </AnimatedSection>
+
+          {/* Bottom — 4 columns: text | image | text | text */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+            {/* Col 1 — text */}
+            <AnimatedSection delay={0.05} className="bg-[#F5F0E8] rounded-2xl p-6 flex flex-col">
+              <h3 className="text-[#1C3A2B] font-semibold text-sm mb-3 leading-snug">
+                Приватность,<br />как стандарт:
+              </h3>
+              <p className="text-[#1C3A2B]/50 text-sm leading-relaxed flex-1">
+                Мы ограничили количество клубных карт, чтобы каждый резидент чувствовал себя в абсолютном уединении даже в разгар сезона.
+              </p>
             </AnimatedSection>
 
-            <AnimatedSection direction="left" delay={0.15}>
-              <div className="overflow-hidden rounded-3xl" style={{ aspectRatio: "4/5" }}>
-                <img
-                  src={membersImg}
-                  alt="Club members"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                />
-              </div>
+            {/* Col 2 — image */}
+            <AnimatedSection delay={0.1} className="overflow-hidden rounded-2xl" style={{ minHeight: "280px" }}>
+              <img
+                src={membersImg}
+                alt="Club lifestyle"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                style={{ minHeight: "280px" }}
+              />
             </AnimatedSection>
+
+            {/* Col 3 — text */}
+            <AnimatedSection delay={0.15} className="bg-[#F5F0E8] rounded-2xl p-6 flex flex-col">
+              <h3 className="text-[#1C3A2B] font-semibold text-sm mb-3 leading-snug">
+                Эстетика<br />вне времени
+              </h3>
+              <p className="text-[#1C3A2B]/50 text-sm leading-relaxed flex-1">
+                Дизайн нашего поля и клубного дома вдохновлён классическими британскими клубами, но оснащён технологиями будущего для анализа вашей игры.
+              </p>
+            </AnimatedSection>
+
+            {/* Col 4 — text with arrow link */}
+            <AnimatedSection delay={0.2} className="bg-[#F5F0E8] rounded-2xl p-6 flex flex-col">
+              <div className="flex items-start justify-between mb-3">
+                <h3 className="text-[#1C3A2B] font-semibold text-sm leading-snug">
+                  Сообщество<br />равных
+                </h3>
+                <Link href="/about">
+                  <span className="w-7 h-7 rounded-full bg-[#1C3A2B] flex items-center justify-center flex-shrink-0 cursor-pointer hover:bg-[#4A8862] transition-colors">
+                    <ArrowUpRight size={13} className="text-white" />
+                  </span>
+                </Link>
+              </div>
+              <p className="text-[#1C3A2B]/50 text-sm leading-relaxed flex-1">
+                Здесь заключаются сделки и завязываются знакомства в неформальной, доверительной атмосфере — подтверждённой делом, а не словами.
+              </p>
+            </AnimatedSection>
+
           </div>
         </div>
       </section>
