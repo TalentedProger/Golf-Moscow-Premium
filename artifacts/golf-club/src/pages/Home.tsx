@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
 import { ArrowUpRight, ArrowRight, Quote } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
@@ -40,6 +40,30 @@ const heroPills = [
   "Прокат инвентаря",
 ];
 
+const courseCards = [
+  {
+    img: waterHazardImg,
+    title: "Водные препятствия",
+    tag: "Стратегия",
+    desc: "7 водных объектов создают уникальный стратегический рисунок курса. Каждая лунка требует точного расчёта и контроля над мячом.",
+    stats: [{ label: "водных объектов", value: "7" }, { label: "лунок с водой", value: "11" }],
+  },
+  {
+    img: equipmentImg,
+    title: "Качество грина",
+    tag: "Стандарты PGA",
+    desc: "Профессиональный уход по стандартам Augusta National. Идеально ровное покрытие для максимально точного катка мяча.",
+    stats: [{ label: "га ухоженного поля", value: "65" }, { label: "сорт травы", value: "Bentgrass" }],
+  },
+  {
+    img: coachingImg,
+    title: "Тренировочная зона",
+    tag: "Обучение",
+    desc: "Driving range на 30 мест, паттинг грин, бункерный тренажёр и крытая зона отработки ударов с профессиональными инструкторами.",
+    stats: [{ label: "мест на driving range", value: "30" }, { label: "инструктора PGA", value: "4" }],
+  },
+];
+
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
@@ -63,8 +87,8 @@ export default function Home() {
         ref={heroRef}
         className="relative flex flex-col justify-end overflow-hidden rounded-3xl"
         style={{
-          margin: "100px 16px 0 16px",
-          minHeight: "calc(100vh - 120px)",
+          margin: "76px 16px 0 16px",
+          minHeight: "calc(100svh - 92px)",
         }}
       >
         {/* Background image */}
@@ -79,20 +103,24 @@ export default function Home() {
           />
         </motion.div>
 
-        {/* Bottom gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
+        {/* Gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
 
-        {/* Content row — bottom */}
-        <div className="relative z-10 w-full px-6 md:px-12 pb-16 md:pb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-10">
+        {/* Content — bottom */}
+        <div className="relative z-10 w-full px-5 sm:px-8 md:px-12 pb-8 sm:pb-12 md:pb-16">
 
-          {/* LEFT — title + sub + CTA */}
-          <div className="max-w-xl">
+          {/* Title block */}
+          <div className="mb-6 sm:mb-8 max-w-2xl">
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.15, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-              className="font-serif text-white uppercase leading-[0.95] mb-5"
-              style={{ fontSize: "clamp(1.8rem, 3.6vw, 3.4rem)", letterSpacing: "0.02em" }}
+              className="text-white uppercase font-bold leading-[1.0] mb-4"
+              style={{
+                fontSize: "clamp(1.9rem, 5vw, 4rem)",
+                letterSpacing: "-0.01em",
+                fontFamily: "inherit",
+              }}
             >
               VERDE GOLF CLUB:<br />
               ПОЛЕ ВЫСОКОГО КЛАССА<br />
@@ -103,12 +131,16 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="text-white/65 text-sm md:text-base leading-relaxed mb-8 max-w-sm"
+              className="text-white/65 text-sm sm:text-base leading-relaxed max-w-sm"
             >
               Профессиональное поле на 18 лунок, закрытая инфраструктура для отдыха и обучения.
               Всё для игры и нетворкинга в одной локации.
             </motion.p>
+          </div>
 
+          {/* Bottom row — CTA + pills */}
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+            {/* CTA */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -116,45 +148,45 @@ export default function Home() {
             >
               <Link href="/membership">
                 <span
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 bg-white text-[#1C3A2B] cursor-pointer transition-all duration-300 hover:bg-[#C9A96E] font-semibold text-sm tracking-wide"
+                  className="group inline-flex items-center gap-3 px-6 py-3 bg-white text-[#1C3A2B] cursor-pointer transition-all duration-300 hover:bg-[#C9A96E] font-semibold text-sm tracking-wide"
                   style={{ borderRadius: "50px" }}
                   data-testid="hero-cta"
                 >
                   Забронировать
-                  <span className="w-7 h-7 rounded-full bg-[#1C3A2B] group-hover:bg-white flex items-center justify-center transition-colors duration-300">
-                    <ArrowUpRight size={14} className="text-white group-hover:text-[#1C3A2B] transition-colors duration-300" />
+                  <span className="w-6 h-6 rounded-full bg-[#1C3A2B] group-hover:bg-white flex items-center justify-center transition-colors duration-300 flex-shrink-0">
+                    <ArrowUpRight size={13} className="text-white group-hover:text-[#1C3A2B] transition-colors duration-300" />
                   </span>
                 </span>
               </Link>
             </motion.div>
-          </div>
 
-          {/* RIGHT — feature pills 2×2 — semi-transparent with white dots */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.7, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="grid grid-cols-2 gap-2.5"
-          >
-            {heroPills.map((pill) => (
-              <div
-                key={pill}
-                className="flex items-center gap-2 px-4 py-2.5 bg-white/15 backdrop-blur-md border border-white/20 text-white text-xs font-medium tracking-wide"
-                style={{ borderRadius: "50px" }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
-                {pill}
-              </div>
-            ))}
-          </motion.div>
+            {/* Pills — 2×2 grid */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.7, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="grid grid-cols-2 gap-2"
+            >
+              {heroPills.map((pill) => (
+                <div
+                  key={pill}
+                  className="flex items-center gap-2 px-3 py-2 bg-white/12 backdrop-blur-md border border-white/18 text-white text-xs font-medium tracking-wide"
+                  style={{ borderRadius: "50px" }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-white flex-shrink-0" />
+                  {pill}
+                </div>
+              ))}
+            </motion.div>
+          </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════
-          STATS BAR — moved here, right after hero
+          STATS BAR
       ═══════════════════════════════════════════ */}
-      <section className="py-16 bg-[#F5F0E8] border-b border-[#1C3A2B]/10">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
+      <section className="py-14 md:py-16 bg-[#F5F0E8] border-b border-[#1C3A2B]/10">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 md:px-12">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-[#1C3A2B]/15">
             <CounterStat value={18} label="Лунок" description="Чемпионский курс PGA" />
             <CounterStat value={365} label="Дней" description="Открыт круглый год" />
@@ -165,11 +197,11 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          ABOUT SPLIT — image | editorial text
+          ABOUT SPLIT
       ═══════════════════════════════════════════ */}
-      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[600px]">
+      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[560px]">
         <AnimatedSection direction="right" className="overflow-hidden">
-          <div className="h-full min-h-[400px] lg:min-h-[600px] overflow-hidden relative">
+          <div className="h-full min-h-[360px] lg:min-h-[560px] overflow-hidden">
             <img
               src={clubhouseImg}
               alt="Verde Clubhouse"
@@ -179,11 +211,11 @@ export default function Home() {
         </AnimatedSection>
 
         <AnimatedSection direction="left" delay={0.15} className="bg-[#1C3A2B] flex items-center">
-          <div className="px-10 md:px-16 py-20">
+          <div className="px-8 sm:px-12 md:px-16 py-16 md:py-20">
             <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-5">О клубе</p>
             <h2
               className="font-serif text-white uppercase leading-tight mb-7"
-              style={{ fontSize: "clamp(2.2rem, 4vw, 3.6rem)", letterSpacing: "0.02em" }}
+              style={{ fontSize: "clamp(2rem, 4vw, 3.6rem)", letterSpacing: "0.02em" }}
             >
               МЕСТО, ГДЕ<br />ВРЕМЯ<br />ЗАМЕДЛЯЕТСЯ
             </h2>
@@ -203,59 +235,78 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          COURSE PREVIEW — text left + rounded cards
-          Same width as hero (mx-4)
+          COURSE — text left top, cards below full width
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#0F2419] py-20 md:py-28" style={{ margin: "0" }}>
-        <div style={{ margin: "0 16px" }}>
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+      <section className="bg-[#0F2419] py-20 md:py-28" style={{ margin: "0 16px" }}>
 
-            {/* Left — text block */}
-            <AnimatedSection className="lg:w-72 xl:w-80 flex-shrink-0 lg:sticky lg:top-32">
-              <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Гольф-поле</p>
-              <h2
-                className="font-serif text-white uppercase leading-tight mb-8"
-                style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", letterSpacing: "0.02em" }}
-              >
-                ПОЛЕ<br />ЧЕМПИОНСКОГО<br />КЛАССА
-              </h2>
-              <Link href="/about">
-                <span className="group inline-flex items-center gap-2 text-white/50 hover:text-white text-sm tracking-wide cursor-pointer transition-colors border-b border-white/20 pb-1 hover:border-white/60">
-                  Подробнее <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </span>
-              </Link>
-            </AnimatedSection>
-
-            {/* Right — 3 rounded cards */}
-            <div className="flex-1 grid grid-cols-1 md:grid-cols-3 gap-4">
-              {[
-                { img: waterHazardImg, title: "Водные препятствия", desc: "7 водных объектов, стратегическая глубина каждой лунки" },
-                { img: equipmentImg, title: "Качество грина", desc: "Профессиональный уход по стандартам Augusta National" },
-                { img: coachingImg, title: "Тренировочная зона", desc: "Driving range, паттинг грин, бункерный тренажёр" },
-              ].map((item, i) => (
-                <AnimatedSection key={item.title} delay={i * 0.12}>
-                  <motion.div
-                    whileHover={{ y: -4 }}
-                    transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                    className="relative overflow-hidden rounded-2xl cursor-pointer"
-                    style={{ aspectRatio: "3/4" }}
-                  >
-                    <img src={item.img} alt={item.title} className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6">
-                      <h3
-                        className="font-serif text-white uppercase mb-2 leading-tight"
-                        style={{ fontSize: "clamp(1.1rem, 1.8vw, 1.5rem)", letterSpacing: "0.03em" }}
-                      >
-                        {item.title}
-                      </h3>
-                      <p className="text-white/60 text-xs leading-relaxed">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                </AnimatedSection>
-              ))}
-            </div>
+        {/* Header row — text aligned left */}
+        <AnimatedSection className="mb-12 md:mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
+          <div>
+            <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Гольф-поле</p>
+            <h2
+              className="font-serif text-white uppercase leading-tight"
+              style={{ fontSize: "clamp(2rem, 3.8vw, 3.4rem)", letterSpacing: "0.02em" }}
+            >
+              ПОЛЕ<br />ЧЕМПИОНСКОГО<br />КЛАССА
+            </h2>
           </div>
+          <Link href="/about">
+            <span className="group inline-flex items-center gap-2 text-white/50 hover:text-white text-sm tracking-wide cursor-pointer transition-colors border-b border-white/20 pb-1 hover:border-white/60 whitespace-nowrap self-start sm:self-auto mb-1">
+              Подробнее <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </span>
+          </Link>
+        </AnimatedSection>
+
+        {/* Cards row — full container width, 3 equal columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {courseCards.map((item, i) => (
+            <AnimatedSection key={item.title} delay={i * 0.12}>
+              <motion.div
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                className="relative overflow-hidden rounded-2xl cursor-pointer flex flex-col"
+                style={{ minHeight: "480px" }}
+              >
+                {/* Image top half */}
+                <div className="relative flex-shrink-0 overflow-hidden" style={{ height: "240px" }}>
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0F2419]/60" />
+                  {/* Tag badge */}
+                  <div className="absolute top-4 left-4">
+                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#C9A96E] bg-black/40 backdrop-blur-sm px-3 py-1 rounded-full border border-[#C9A96E]/30">
+                      {item.tag}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content bottom */}
+                <div className="bg-white/6 backdrop-blur-sm border border-white/8 border-t-0 rounded-b-2xl flex flex-col flex-1 p-6">
+                  <h3
+                    className="font-serif text-white uppercase mb-3 leading-tight"
+                    style={{ fontSize: "clamp(1.1rem, 1.6vw, 1.4rem)", letterSpacing: "0.03em" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-white/55 text-sm leading-relaxed mb-6 flex-1">
+                    {item.desc}
+                  </p>
+                  {/* Mini stats */}
+                  <div className="grid grid-cols-2 gap-3 pt-5 border-t border-white/10">
+                    {item.stats.map((s) => (
+                      <div key={s.label}>
+                        <div className="text-[#C9A96E] font-bold text-lg leading-none mb-1">{s.value}</div>
+                        <div className="text-white/35 text-[10px] uppercase tracking-wide leading-tight">{s.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatedSection>
+          ))}
         </div>
       </section>
 
@@ -263,15 +314,14 @@ export default function Home() {
           LIFESTYLE — single image editorial
       ═══════════════════════════════════════════ */}
       <section className="bg-[#F5F0E8] py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-            {/* Text block */}
             <AnimatedSection direction="right">
               <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Клубная жизнь</p>
               <h2
                 className="font-serif text-[#1C3A2B] uppercase leading-tight mb-8"
-                style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)", letterSpacing: "0.02em" }}
+                style={{ fontSize: "clamp(2rem, 5vw, 4rem)", letterSpacing: "0.02em" }}
               >
                 ГОЛЬФ — ЭТО<br />СОСТОЯНИЕ ДУШИ
               </h2>
@@ -293,7 +343,6 @@ export default function Home() {
               </div>
             </AnimatedSection>
 
-            {/* Single image */}
             <AnimatedSection direction="left" delay={0.15}>
               <div className="overflow-hidden rounded-3xl" style={{ aspectRatio: "4/5" }}>
                 <img
@@ -308,11 +357,11 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          TESTIMONIALS — redesigned editorial cards
+          TESTIMONIALS — three cards
       ═══════════════════════════════════════════ */}
       <section className="py-24 md:py-32 bg-[#1C3A2B]">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <AnimatedSection className="mb-16">
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 md:px-12">
+          <AnimatedSection className="mb-14">
             <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Отзывы резидентов</p>
             <h2
               className="font-serif text-white uppercase leading-tight"
@@ -328,22 +377,19 @@ export default function Home() {
                 <motion.div
                   whileHover={{ y: -4 }}
                   transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                  className="bg-white/6 backdrop-blur-sm border border-white/10 rounded-2xl p-8 flex flex-col justify-between h-full cursor-default"
-                  style={{ minHeight: "280px" }}
+                  className="bg-white/6 border border-white/10 rounded-2xl p-8 flex flex-col justify-between h-full"
+                  style={{ minHeight: "260px" }}
                 >
-                  {/* Quote icon */}
                   <div className="mb-6">
-                    <div className="w-10 h-10 rounded-full bg-[#C9A96E]/15 flex items-center justify-center mb-6">
-                      <Quote size={18} className="text-[#C9A96E]" />
+                    <div className="w-9 h-9 rounded-full bg-[#C9A96E]/15 flex items-center justify-center mb-5">
+                      <Quote size={16} className="text-[#C9A96E]" />
                     </div>
                     <p className="text-white/75 leading-relaxed text-sm md:text-base">
                       {t.quote}
                     </p>
                   </div>
-
-                  {/* Author */}
-                  <div className="flex items-center gap-3 pt-6 border-t border-white/10">
-                    <div className="w-10 h-10 rounded-full bg-[#C9A96E]/20 flex items-center justify-center text-[#C9A96E] text-xs font-bold tracking-wide flex-shrink-0">
+                  <div className="flex items-center gap-3 pt-5 border-t border-white/10">
+                    <div className="w-9 h-9 rounded-full bg-[#C9A96E]/20 flex items-center justify-center text-[#C9A96E] text-xs font-bold tracking-wide flex-shrink-0">
                       {t.initials}
                     </div>
                     <div>
@@ -359,32 +405,31 @@ export default function Home() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          MEMBERSHIP CTA — full-bleed dark
+          MEMBERSHIP CTA
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden py-32">
+      <section className="relative overflow-hidden py-28 md:py-32">
         <div
           className="absolute inset-0"
           style={{ backgroundImage: `url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
         />
         <div className="absolute inset-0 bg-[#1C3A2B]/85" />
 
-        <div className="relative max-w-3xl mx-auto px-6 md:px-12 text-center">
+        <div className="relative max-w-3xl mx-auto px-5 sm:px-8 md:px-12 text-center">
           <AnimatedSection>
             <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-semibold mb-5">Членство</p>
             <h2
               className="font-serif text-white uppercase leading-tight mb-7"
-              style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)", letterSpacing: "0.02em" }}
+              style={{ fontSize: "clamp(2rem, 5vw, 4rem)", letterSpacing: "0.02em" }}
             >
               СТАНЬТЕ ЧАСТЬЮ<br />НАШЕГО СООБЩЕСТВА
             </h2>
-            <p className="text-white/55 mb-12 leading-relaxed max-w-xl mx-auto">
+            <p className="text-white/55 mb-10 leading-relaxed max-w-xl mx-auto text-sm md:text-base">
               Ограниченное число мест. Индивидуальное рассмотрение каждой заявки. Присоединяйтесь к кругу людей, для которых важны качество, баланс и рост.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/membership">
                 <span
-                  className="group inline-flex items-center gap-3 px-8 py-4 bg-[#C9A96E] text-[#1C3A2B] cursor-pointer hover:bg-[#E4C99A] transition-colors font-semibold text-sm tracking-wide"
-                  style={{ borderRadius: "4px" }}
+                  className="group inline-flex items-center gap-3 px-7 py-3.5 bg-[#C9A96E] text-[#1C3A2B] cursor-pointer hover:bg-[#E4C99A] transition-colors font-semibold text-sm tracking-wide rounded"
                   data-testid="home-membership-cta"
                 >
                   Узнать об условиях <ArrowRight size={15} />
@@ -392,8 +437,7 @@ export default function Home() {
               </Link>
               <Link href="/contact">
                 <span
-                  className="inline-flex items-center gap-2 px-8 py-4 border border-white/30 text-white cursor-pointer hover:bg-white/10 transition-colors font-medium text-sm tracking-wide"
-                  style={{ borderRadius: "4px" }}
+                  className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/30 text-white cursor-pointer hover:bg-white/10 transition-colors font-medium text-sm tracking-wide rounded"
                   data-testid="home-contact-cta"
                 >
                   Связаться с нами
