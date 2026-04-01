@@ -1,0 +1,50 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "qss5eFIV-6mh_lv5sSzwk"
+uri = "file://artifacts/golf-club/src/assets/hero-aerial.png"
+type = "image"
+title = "Golf course aerial view"
+
+[[generated]]
+id = "zeKoklH05CFlROR_T_iA6"
+uri = "file://artifacts/golf-club/src/assets/clubhouse.png"
+type = "image"
+title = "Clubhouse exterior"
+
+[[generated]]
+id = "ADWLDnUWDl6O0x272-xD2"
+uri = "file://artifacts/golf-club/src/assets/golf-ball.png"
+type = "image"
+title = "Golf ball close-up"
+
+[[generated]]
+id = "awC_X5ptMzjj1DXF37Yyi"
+uri = "file://artifacts/golf-club/src/assets/coaching.png"
+type = "image"
+title = "Golf instructor coaching"
+
+[[generated]]
+id = "XdkymFpt-a_AsAqXQL6If"
+uri = "file://artifacts/golf-club/src/assets/restaurant.png"
+type = "image"
+title = "Luxury restaurant interior"
+
+[[generated]]
+id = "GMX7Y-EsVTyv9kFaofT1g"
+uri = "file://artifacts/golf-club/src/assets/members.png"
+type = "image"
+title = "Members socializing"
+
+[[generated]]
+id = "fmhLvUi0WvOr-kOPHc8yu"
+uri = "file://artifacts/golf-club/src/assets/water-hazard.png"
+type = "image"
+title = "Water hazard hole"
+
+[[generated]]
+id = "4klL3yu7keNtyvHjLAan_"
+uri = "file://artifacts/golf-club/src/assets/equipment.png"
+type = "image"
+title = "Golf equipment flat lay"
