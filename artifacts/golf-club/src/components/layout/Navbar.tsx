@@ -17,7 +17,7 @@ export default function Navbar() {
   const [location] = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40);
+    const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -28,73 +28,63 @@ export default function Navbar() {
 
   return (
     <>
+      {/* Floating nav — same horizontal inset as hero card */}
       <motion.header
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        className={`fixed top-3 z-50 transition-all duration-400 rounded-2xl ${
           scrolled
-            ? "bg-white/90 backdrop-blur-xl border-b border-[#1C3A2B]/10 shadow-sm"
-            : "bg-transparent"
+            ? "bg-white shadow-md border border-[#1C3A2B]/12"
+            : "bg-white/90 backdrop-blur-sm shadow-sm border border-[#1C3A2B]/10"
         }`}
+        style={{ left: "16px", right: "16px" }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="px-5 md:px-7">
+          <div className="flex items-center justify-between h-14 md:h-16">
+
+            {/* Logo */}
             <Link href="/">
               <span className="flex items-center gap-2 cursor-pointer group">
-                <span className={`font-serif font-bold tracking-[0.15em] transition-colors duration-300 text-lg md:text-xl ${
-                  scrolled ? "text-[#1C3A2B]" : "text-white"
-                }`}>
+                <span className="font-serif tracking-[0.12em] text-[#1C3A2B] text-base md:text-lg">
                   VERDE
                 </span>
-                <span className={`text-xs tracking-[0.25em] uppercase transition-colors duration-300 font-light ${
-                  scrolled ? "text-[#4A8862]" : "text-white/70"
-                }`}>
+                <span className="text-xs tracking-[0.22em] uppercase text-[#4A8862] font-medium hidden sm:block">
                   Golf Club
                 </span>
               </span>
             </Link>
 
-            <nav className="hidden md:flex items-center gap-1">
+            {/* Desktop nav — pill-shaped active indicator */}
+            <nav className="hidden md:flex items-center gap-1 bg-[#F5F0E8]/70 rounded-full px-2 py-1.5">
               {navLinks.map((link) => (
                 <Link key={link.href} href={link.href}>
-                  <span className={`relative px-4 py-2 text-sm font-medium tracking-wide cursor-pointer transition-all duration-300 rounded-lg group ${
+                  <span className={`relative px-4 py-1.5 text-sm font-medium tracking-wide cursor-pointer transition-all duration-250 rounded-full ${
                     location === link.href
-                      ? scrolled ? "text-[#1C3A2B]" : "text-white"
-                      : scrolled ? "text-[#1C3A2B]/70 hover:text-[#1C3A2B]" : "text-white/70 hover:text-white"
+                      ? "bg-[#1C3A2B] text-white shadow-sm"
+                      : "text-[#1C3A2B]/70 hover:text-[#1C3A2B] hover:bg-[#1C3A2B]/8"
                   }`}>
                     {link.label}
-                    {location === link.href && (
-                      <motion.span
-                        layoutId="nav-indicator"
-                        className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-4 rounded-full ${
-                          scrolled ? "bg-[#1C3A2B]" : "bg-white"
-                        }`}
-                      />
-                    )}
                   </span>
                 </Link>
               ))}
             </nav>
 
-            <div className="hidden md:flex items-center gap-3">
+            {/* CTA button */}
+            <div className="hidden md:flex items-center">
               <Link href="/contact">
-                <span className={`px-5 py-2.5 rounded-full text-sm font-medium tracking-wide cursor-pointer transition-all duration-300 ${
-                  scrolled
-                    ? "bg-[#1C3A2B] text-white hover:bg-[#2D5A40]"
-                    : "bg-white/15 text-white border border-white/30 hover:bg-white/25 backdrop-blur-sm"
-                }`}
-                data-testid="nav-cta"
+                <span
+                  className="px-5 py-2 bg-[#1C3A2B] text-white text-sm font-medium tracking-wide cursor-pointer hover:bg-[#2D5A40] transition-colors duration-250 rounded-full"
+                  data-testid="nav-cta"
                 >
                   Записаться
                 </span>
               </Link>
             </div>
 
+            {/* Mobile burger */}
             <button
-              className={`md:hidden p-2 rounded-lg transition-colors ${
-                scrolled ? "text-[#1C3A2B] hover:bg-[#1C3A2B]/10" : "text-white hover:bg-white/10"
-              }`}
+              className="md:hidden p-2 text-[#1C3A2B] hover:bg-[#1C3A2B]/8 rounded-lg transition-colors"
               onClick={() => setMobileOpen(!mobileOpen)}
               data-testid="nav-mobile-toggle"
             >
@@ -104,6 +94,7 @@ export default function Navbar() {
         </div>
       </motion.header>
 
+      {/* Mobile drawer */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -123,7 +114,7 @@ export default function Navbar() {
                   className="w-full"
                 >
                   <Link href={link.href}>
-                    <span className={`block py-4 text-2xl font-serif cursor-pointer border-b border-white/10 transition-colors ${
+                    <span className={`block py-4 font-serif text-2xl uppercase cursor-pointer border-b border-white/10 transition-colors ${
                       location === link.href ? "text-[#C9A96E]" : "text-white hover:text-[#C9A96E]"
                     }`}>
                       {link.label}
@@ -138,7 +129,7 @@ export default function Navbar() {
                 className="mt-8 w-full"
               >
                 <Link href="/contact">
-                  <span className="block text-center py-4 px-8 bg-[#C9A96E] text-[#1C3A2B] rounded-full font-medium text-lg cursor-pointer">
+                  <span className="block text-center py-4 px-8 bg-[#C9A96E] text-[#1C3A2B] rounded-full font-semibold text-lg cursor-pointer">
                     Записаться
                   </span>
                 </Link>

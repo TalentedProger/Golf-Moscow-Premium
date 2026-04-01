@@ -57,11 +57,15 @@ export default function Home() {
     <div className="overflow-x-hidden">
 
       {/* ═══════════════════════════════════════════
-          HERO — full-bleed, content bottom-left
+          HERO — card shape, same inset as navbar
       ═══════════════════════════════════════════ */}
       <section
         ref={heroRef}
-        className="relative h-screen min-h-[640px] flex flex-col justify-end overflow-hidden"
+        className="relative flex flex-col justify-end overflow-hidden rounded-2xl"
+        style={{
+          margin: "86px 16px 0 16px",
+          minHeight: "calc(100vh - 110px)",
+        }}
       >
         {/* Background image */}
         <motion.div
