@@ -99,25 +99,25 @@ export default function Home() {
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
-        {/* CENTER TEXT — same style as VERDE GOLF CLUB */}
+        {/* CENTER TEXT — outlined, semi-transparent, 3 lines */}
         <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 1.2, ease: "easeOut" }}
             className="text-center"
+            style={{ maxWidth: "min(480px, 55vw)" }}
           >
             <p
-              className="uppercase text-white font-extrabold leading-[0.88]"
-              style={{ fontSize: "clamp(2.3rem, 6vw, 5.3rem)", letterSpacing: "0.12em" }}
+              className="uppercase font-extrabold leading-[1.05] break-words"
+              style={{
+                fontSize: "clamp(1.5rem, 3.8vw, 3.4rem)",
+                letterSpacing: "0.1em",
+                color: "rgba(255,255,255,0.06)",
+                WebkitTextStroke: "1.5px rgba(255,255,255,0.72)",
+              }}
             >
-              ПОЛЕ ВЫСОКОГО КЛАССА
-            </p>
-            <p
-              className="uppercase text-white font-extrabold leading-[0.88]"
-              style={{ fontSize: "clamp(2.3rem, 6vw, 5.3rem)", letterSpacing: "0.12em" }}
-            >
-              В 40 МИНУТАХ ОТ МОСКВЫ
+              ПОЛЕ ВЫСОКОГО<br />КЛАССА В 40<br />МИНУТАХ ОТ МОСКВЫ
             </p>
           </motion.div>
         </div>
@@ -133,7 +133,7 @@ export default function Home() {
               transition={{ delay: 0.15, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
               className="text-white uppercase font-extrabold leading-[0.88]"
               style={{
-                fontSize: "clamp(2.3rem, 6vw, 5.3rem)",
+                fontSize: "clamp(1.15rem, 3vw, 2.65rem)",
                 letterSpacing: "0.12em",
               }}
             >
