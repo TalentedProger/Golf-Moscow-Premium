@@ -311,7 +311,7 @@ export default function Home() {
                   <div>
                     <h3
                       className="font-serif text-white uppercase mb-2 leading-tight"
-                      style={{ fontSize: "clamp(1.2rem, 1.8vw, 1.6rem)", letterSpacing: "0.03em" }}
+                      style={{ fontSize: "clamp(1.2rem, 1.8vw, 1.6rem)", letterSpacing: "0.03em", fontWeight: 900 }}
                     >
                       {item.title}
                     </h3>
@@ -335,7 +335,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           TESTIMONIALS — image background, equal margins
       ═══════════════════════════════════════════ */}
-      <section style={{ margin: "32px 32px 32px 32px" }}>
+      <section style={{ margin: "64px 32px 64px 32px" }}>
         <div className="relative rounded-3xl overflow-hidden px-6 sm:px-10 md:px-14 py-14 md:py-20">
           <div className="absolute inset-0">
             <img src={testimonialsBg} alt="Golf course" className="w-full h-full object-cover" />

@@ -30,8 +30,8 @@ export default function Footer() {
       </div>
 
       {/* Top content */}
-      <div className="relative px-8 sm:px-12 md:px-16 pt-16 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <div className="relative px-8 sm:px-12 md:px-16 pt-16 pb-0">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
 
           {/* Logo + description */}
           <div className="lg:col-span-2">
@@ -68,7 +68,7 @@ export default function Footer() {
             </div>
           ))}
 
-          {/* Contacts — at the end */}
+          {/* Contacts */}
           <div>
             <h4 className="text-xs font-semibold tracking-[0.2em] uppercase text-[#C9A96E] mb-4">Контакты</h4>
             <ul className="space-y-3">
@@ -89,25 +89,26 @@ export default function Footer() {
         </div>
 
         {/* Copyright bar */}
-        <div className="border-t border-white/8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="border-t border-white/8 pt-6 pb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">© 2025 Verde Golf Club. Все права защищены.</p>
           <div className="flex gap-6">
             <span className="text-white/30 text-xs hover:text-white/55 cursor-pointer transition-colors">Политика конфиденциальности</span>
             <span className="text-white/30 text-xs hover:text-white/55 cursor-pointer transition-colors">Условия использования</span>
           </div>
         </div>
-      </div>
 
-      {/* Big typographic block — VERDE / Golf / Club */}
-      <div className="relative px-8 sm:px-12 md:px-14 pt-4 pb-0 overflow-hidden" style={{ lineHeight: 0.82 }}>
-        <div
-          className="font-serif font-bold text-white uppercase select-none"
-          style={{ fontSize: "clamp(4rem, 20vw, 22rem)", letterSpacing: "-0.02em" }}
-          aria-hidden="true"
-        >
-          <div>VERDE</div>
-          <div>Golf</div>
-          <div>Club</div>
+        {/* Big typographic line — VERDE GOLF CLUB — one line, inside section */}
+        <div className="overflow-hidden pb-0 -mx-8 sm:-mx-12 md:-mx-16 px-6 sm:px-8 md:px-10" style={{ lineHeight: 0.85 }}>
+          <div
+            className="font-serif font-black text-white uppercase select-none whitespace-nowrap"
+            style={{
+              fontSize: "clamp(3rem, 10vw, 10rem)",
+              letterSpacing: "-0.025em",
+            }}
+            aria-hidden="true"
+          >
+            VERDE GOLF CLUB
+          </div>
         </div>
       </div>
     </footer>
