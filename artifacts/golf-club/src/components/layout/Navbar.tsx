@@ -38,7 +38,7 @@ export default function Navbar() {
             ? "bg-black/80 backdrop-blur-xl shadow-xl border border-white/10"
             : "bg-black/65 backdrop-blur-lg shadow-md border border-white/8"
         }`}
-        style={{ left: "16px", right: "16px" }}
+        style={{ left: "48px", right: "48px" }}
       >
         <div className="px-5 lg:px-7">
           <div className="flex items-center justify-between h-14 lg:h-16">

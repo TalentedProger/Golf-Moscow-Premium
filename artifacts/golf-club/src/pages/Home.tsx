@@ -109,12 +109,13 @@ export default function Home() {
             style={{ maxWidth: "min(480px, 55vw)" }}
           >
             <p
-              className="uppercase font-extrabold leading-[1.05] break-words"
+              className="uppercase font-extrabold font-sans leading-[1.05] break-words"
               style={{
                 fontSize: "clamp(1.5rem, 3.8vw, 3.4rem)",
                 letterSpacing: "0.1em",
                 color: "rgba(255,255,255,0.06)",
                 WebkitTextStroke: "1.5px rgba(255,255,255,0.72)",
+                fontFamily: "system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif",
               }}
             >
               ПОЛЕ ВЫСОКОГО<br />КЛАССА В 40<br />МИНУТАХ ОТ МОСКВЫ
