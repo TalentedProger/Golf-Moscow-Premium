@@ -91,7 +91,7 @@ export default function Home() {
       <section
         ref={heroRef}
         className="relative flex flex-col justify-end overflow-hidden rounded-3xl"
-        style={{ margin: "96px 32px 0 32px", minHeight: "calc(100svh - 112px)" }}
+        style={{ margin: "96px 48px 0 48px", minHeight: "calc(100svh - 112px)" }}
       >
         {/* Background */}
         <motion.div style={{ scale: heroScale }} className="absolute inset-0 will-change-transform">
@@ -99,7 +99,7 @@ export default function Home() {
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent" />
 
-        {/* CENTER TEXT — thin, semi-transparent, see-through */}
+        {/* CENTER TEXT — same style as VERDE GOLF CLUB */}
         <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
           <motion.div
             initial={{ opacity: 0 }}
@@ -108,14 +108,14 @@ export default function Home() {
             className="text-center"
           >
             <p
-              className="uppercase text-white/30 tracking-[0.25em] leading-tight"
-              style={{ fontSize: "clamp(1rem, 2.8vw, 2.2rem)", fontWeight: 100 }}
+              className="uppercase text-white font-extrabold leading-[0.88]"
+              style={{ fontSize: "clamp(2.3rem, 6vw, 5.3rem)", letterSpacing: "0.12em" }}
             >
               ПОЛЕ ВЫСОКОГО КЛАССА
             </p>
             <p
-              className="uppercase text-white/30 tracking-[0.25em] leading-tight"
-              style={{ fontSize: "clamp(1rem, 2.8vw, 2.2rem)", fontWeight: 100 }}
+              className="uppercase text-white font-extrabold leading-[0.88]"
+              style={{ fontSize: "clamp(2.3rem, 6vw, 5.3rem)", letterSpacing: "0.12em" }}
             >
               В 40 МИНУТАХ ОТ МОСКВЫ
             </p>
@@ -133,7 +133,7 @@ export default function Home() {
               transition={{ delay: 0.15, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
               className="text-white uppercase font-extrabold leading-[0.88]"
               style={{
-                fontSize: "clamp(3.5rem, 9vw, 8rem)",
+                fontSize: "clamp(2.3rem, 6vw, 5.3rem)",
                 letterSpacing: "0.12em",
               }}
             >
@@ -182,7 +182,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           LIFESTYLE — Философия клуба
       ═══════════════════════════════════════════ */}
-      <section className="bg-white py-20 md:py-28" style={{ margin: "0 32px" }}>
+      <section className="bg-white py-20 md:py-28" style={{ margin: "0 48px" }}>
         <AnimatedSection className="mb-14 md:mb-16">
           <div className="flex items-center gap-2 mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#4A8862]" />
@@ -244,7 +244,7 @@ export default function Home() {
         <AnimatedSection direction="left" delay={0.15} className="bg-[#1C3A2B] flex items-center">
           <div className="px-8 sm:px-12 md:px-16 py-16 md:py-20">
             <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-5">О клубе</p>
-            <h2 className="font-serif text-white uppercase leading-tight mb-7" style={{ fontSize: "clamp(2rem, 4vw, 3.6rem)", letterSpacing: "0.02em" }}>
+            <h2 className="font-serif font-black text-white uppercase leading-tight mb-7" style={{ fontSize: "clamp(2rem, 4vw, 3.6rem)", letterSpacing: "0.02em" }}>
               МЕСТО, ГДЕ<br />ВРЕМЯ<br />ЗАМЕДЛЯЕТСЯ
             </h2>
             <p className="text-white/55 leading-relaxed mb-5 text-sm md:text-base">
@@ -265,11 +265,11 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           COURSE — full-image cards
       ═══════════════════════════════════════════ */}
-      <section className="pt-20 md:pt-28 pb-0" style={{ margin: "0 32px" }}>
+      <section className="pt-20 md:pt-28 pb-0" style={{ margin: "0 48px" }}>
         <AnimatedSection className="mb-12 md:mb-16 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6">
           <div>
             <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Гольф-поле</p>
-            <h2 className="font-serif text-[#1C3A2B] uppercase leading-tight" style={{ fontSize: "clamp(2rem, 3.8vw, 3.4rem)", letterSpacing: "0.02em" }}>
+            <h2 className="font-serif font-black text-[#1C3A2B] uppercase leading-tight" style={{ fontSize: "clamp(2rem, 3.8vw, 3.4rem)", letterSpacing: "0.02em" }}>
               ПОЛЕ<br />ЧЕМПИОНСКОГО<br />КЛАССА
             </h2>
           </div>
@@ -310,7 +310,7 @@ export default function Home() {
                   {/* Content bottom */}
                   <div>
                     <h3
-                      className="font-serif text-white uppercase mb-2 leading-tight"
+                      className="font-serif font-black text-white uppercase mb-2 leading-tight"
                       style={{ fontSize: "clamp(1.2rem, 1.8vw, 1.6rem)", letterSpacing: "0.03em", fontWeight: 900 }}
                     >
                       {item.title}
@@ -335,7 +335,7 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           TESTIMONIALS — image background, equal margins
       ═══════════════════════════════════════════ */}
-      <section style={{ margin: "64px 32px 64px 32px" }}>
+      <section style={{ margin: "64px 48px 64px 48px" }}>
         <div className="relative rounded-3xl overflow-hidden px-6 sm:px-10 md:px-14 py-14 md:py-20">
           <div className="absolute inset-0">
             <img src={testimonialsBg} alt="Golf course" className="w-full h-full object-cover" />
@@ -345,7 +345,7 @@ export default function Home() {
           <AnimatedSection className="relative z-10 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-5 mb-12">
             <div>
               <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-3">Отзывы резидентов</p>
-              <h2 className="font-serif text-white uppercase leading-tight" style={{ fontSize: "clamp(1.6rem, 3vw, 2.6rem)", letterSpacing: "0.02em" }}>
+              <h2 className="font-serif font-black text-white uppercase leading-tight" style={{ fontSize: "clamp(1.6rem, 3vw, 2.6rem)", letterSpacing: "0.02em" }}>
                 ЧТО ГОВОРЯТ<br />НАШИ ЧЛЕНЫ
               </h2>
             </div>
@@ -386,11 +386,11 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           INFO TABLE — editorial style, no cards
       ═══════════════════════════════════════════ */}
-      <section className="bg-white py-20 md:py-24" style={{ margin: "0 32px" }}>
+      <section className="bg-white py-20 md:py-24" style={{ margin: "0 48px" }}>
         <AnimatedSection className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 pb-10 border-b border-[#1C3A2B]/12 mb-0">
           <div>
             <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-3">Всё о клубе</p>
-            <h2 className="font-serif text-[#1C3A2B] uppercase leading-tight" style={{ fontSize: "clamp(1.6rem, 3vw, 2.8rem)", letterSpacing: "0.02em" }}>
+            <h2 className="font-serif font-black text-[#1C3A2B] uppercase leading-tight" style={{ fontSize: "clamp(1.6rem, 3vw, 2.8rem)", letterSpacing: "0.02em" }}>
               ВАЖНАЯ<br />ИНФОРМАЦИЯ
             </h2>
           </div>
@@ -439,7 +439,7 @@ export default function Home() {
         <div className="relative z-10 flex flex-col items-center justify-center text-center px-5 sm:px-8 py-24" style={{ minHeight: "600px" }}>
           <AnimatedSection>
             <h2
-              className="font-serif text-white uppercase leading-tight mb-5"
+              className="font-serif font-black text-white uppercase leading-tight mb-5"
               style={{
                 fontSize: "clamp(2.8rem, 7vw, 6.5rem)",
                 letterSpacing: "0.03em",

@@ -97,10 +97,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Big typographic line — VERDE GOLF CLUB — one line, inside section */}
-        <div className="overflow-hidden pb-0 -mx-8 sm:-mx-12 md:-mx-16 px-6 sm:px-8 md:px-10" style={{ lineHeight: 0.85 }}>
+        {/* Big typographic line — VERDE GOLF CLUB — centered, one line */}
+        <div className="overflow-hidden pb-0 -mx-8 sm:-mx-12 md:-mx-16" style={{ lineHeight: 0.85 }}>
           <div
-            className="font-serif font-black text-white uppercase select-none whitespace-nowrap"
+            className="font-serif font-black text-white uppercase select-none whitespace-nowrap text-center"
             style={{
               fontSize: "clamp(3rem, 10vw, 10rem)",
               letterSpacing: "-0.025em",

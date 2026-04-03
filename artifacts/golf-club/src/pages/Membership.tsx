@@ -83,7 +83,7 @@ export default function Membership() {
           <AnimatedSection>
             <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-semibold mb-5">Членство</p>
             <h1
-              className="font-serif text-white uppercase leading-[0.93] mb-6"
+              className="font-serif font-black text-white uppercase leading-[0.93] mb-6"
               style={{ fontSize: "clamp(2.8rem, 7vw, 6rem)", letterSpacing: "0.02em" }}
             >
               СТАТЬ ЧАСТЬЮ<br />VERDE
@@ -103,7 +103,7 @@ export default function Membership() {
           <AnimatedSection>
             <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-5">Наш подход</p>
             <h2
-              className="font-serif text-[#1C3A2B] uppercase leading-tight"
+              className="font-serif font-black text-[#1C3A2B] uppercase leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", letterSpacing: "0.02em" }}
             >
               ЧЛЕНСТВО — ЭТО<br />ОБРАЗ ЖИЗНИ
@@ -120,7 +120,7 @@ export default function Membership() {
           <AnimatedSection className="pt-20 pb-12">
             <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-3">Тарифы</p>
             <h2
-              className="font-serif text-[#1C3A2B] uppercase leading-tight"
+              className="font-serif font-black text-[#1C3A2B] uppercase leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", letterSpacing: "0.02em" }}
             >
               ВЫБЕРИТЕ<br />СВОЁ ЧЛЕНСТВО
@@ -142,7 +142,7 @@ export default function Membership() {
                   )}
 
                   <h3
-                    className={`font-serif uppercase leading-tight mb-2 ${plan.highlight ? "text-white" : "text-[#1C3A2B]"}`}
+                    className={`font-serif font-black uppercase leading-tight mb-2 ${plan.highlight ? "text-white" : "text-[#1C3A2B]"}`}
                     style={{ fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)", letterSpacing: "0.03em" }}
                   >
                     {plan.name}
@@ -215,7 +215,7 @@ export default function Membership() {
           <div className="px-10 md:px-16 py-20">
             <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-5">Привилегии</p>
             <h2
-              className="font-serif text-white uppercase leading-tight mb-10"
+              className="font-serif font-black text-white uppercase leading-tight mb-10"
               style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", letterSpacing: "0.02em" }}
             >
               БОЛЬШЕ,<br />ЧЕМ ПРОСТО<br />ГОЛЬФ
@@ -248,7 +248,7 @@ export default function Membership() {
           <AnimatedSection className="mb-12">
             <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-3">FAQ</p>
             <h2
-              className="font-serif text-[#1C3A2B] uppercase leading-tight"
+              className="font-serif font-black text-[#1C3A2B] uppercase leading-tight"
               style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", letterSpacing: "0.02em" }}
             >
               ЧАСТО<br />ЗАДАВАЕМЫЕ<br />ВОПРОСЫ
@@ -279,7 +279,7 @@ export default function Membership() {
         <div className="relative max-w-2xl mx-auto px-6 text-center">
           <AnimatedSection>
             <h2
-              className="font-serif text-white uppercase leading-tight mb-5"
+              className="font-serif font-black text-white uppercase leading-tight mb-5"
               style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "0.02em" }}
             >
               НАЧНИТЕ СВОЙ<br />ПУТЬ В VERDE

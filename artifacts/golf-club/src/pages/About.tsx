@@ -55,7 +55,7 @@ export default function About() {
           <AnimatedSection>
             <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-semibold mb-5">Verde Golf Club</p>
             <h1
-              className="font-serif text-white uppercase leading-[0.93] mb-6"
+              className="font-serif font-black text-white uppercase leading-[0.93] mb-6"
               style={{ fontSize: "clamp(2.8rem, 7vw, 6rem)", letterSpacing: "0.02em" }}
             >
               О КЛУБЕ<br />И ГОЛЬФ-ПОЛЕ
@@ -76,7 +76,7 @@ export default function About() {
           <div className="px-10 md:px-16 py-24">
             <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-6">Наша миссия</p>
             <h2
-              className="font-serif text-[#1C3A2B] uppercase leading-tight mb-8"
+              className="font-serif font-black text-[#1C3A2B] uppercase leading-tight mb-8"
               style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", letterSpacing: "0.02em" }}
             >
               ОСНОВАНО<br />В 2019 ГОДУ
@@ -110,7 +110,7 @@ export default function About() {
           <AnimatedSection className="mb-16">
             <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Ценности</p>
             <h2
-              className="font-serif text-white uppercase leading-tight"
+              className="font-serif font-black text-white uppercase leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "0.02em" }}
             >
               ЧТО ЛЕЖИТ<br />В ОСНОВЕ КЛУБА
@@ -125,13 +125,13 @@ export default function About() {
                   className="p-10 bg-[#1C3A2B] transition-colors duration-300"
                 >
                   <div
-                    className="font-serif text-white/20 mb-5 leading-none"
+                    className="font-serif font-black text-white/20 mb-5 leading-none"
                     style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "0.02em" }}
                   >
                     {v.num}
                   </div>
                   <h3
-                    className="font-serif text-white uppercase mb-3 leading-tight"
+                    className="font-serif font-black text-white uppercase mb-3 leading-tight"
                     style={{ fontSize: "clamp(1.3rem, 2vw, 1.9rem)", letterSpacing: "0.03em" }}
                   >
                     {v.title}
@@ -169,7 +169,7 @@ export default function About() {
           <AnimatedSection direction="right">
             <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-5">Гольф-поле</p>
             <h2
-              className="font-serif text-white uppercase leading-tight mb-6"
+              className="font-serif font-black text-white uppercase leading-tight mb-6"
               style={{ fontSize: "clamp(2.2rem, 5vw, 4.5rem)", letterSpacing: "0.02em" }}
             >
               18-ЛУНОЧНЫЙ<br />ЧЕМПИОНСКИЙ<br />КУРС
@@ -179,9 +179,9 @@ export default function About() {
               Рейтинг курса — 73.2, Slope — 131.
             </p>
             <div className="flex gap-6 text-white/70 text-xs tracking-widest uppercase">
-              <div><span className="block font-serif text-white" style={{ fontSize: "1.5rem" }}>Par 72</span>Стандарт</div>
-              <div><span className="block font-serif text-white" style={{ fontSize: "1.5rem" }}>6800м</span>С чёрных ти</div>
-              <div><span className="block font-serif text-white" style={{ fontSize: "1.5rem" }}>73.2</span>Рейтинг</div>
+              <div><span className="block font-serif font-black text-white" style={{ fontSize: "1.5rem" }}>Par 72</span>Стандарт</div>
+              <div><span className="block font-serif font-black text-white" style={{ fontSize: "1.5rem" }}>6800м</span>С чёрных ти</div>
+              <div><span className="block font-serif font-black text-white" style={{ fontSize: "1.5rem" }}>73.2</span>Рейтинг</div>
             </div>
           </AnimatedSection>
         </div>
@@ -195,7 +195,7 @@ export default function About() {
           <AnimatedSection className="mb-12">
             <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-3">Scorecard</p>
             <h2
-              className="font-serif text-[#1C3A2B] uppercase leading-tight"
+              className="font-serif font-black text-[#1C3A2B] uppercase leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", letterSpacing: "0.02em" }}
             >
               КАРТОЧКА ПОЛЯ<br />(ПЕРЕДНЯЯ ДЕВЯТКА)
@@ -257,7 +257,7 @@ export default function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8">
                   <h3
-                    className="font-serif text-white uppercase mb-2 leading-tight"
+                    className="font-serif font-black text-white uppercase mb-2 leading-tight"
                     style={{ fontSize: "clamp(1.2rem, 2vw, 1.8rem)", letterSpacing: "0.03em" }}
                   >
                     {item.title}
@@ -289,7 +289,7 @@ export default function About() {
             <AnimatedSection direction="left" delay={0.15}>
               <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-5">Обучение</p>
               <h2
-                className="font-serif text-[#1C3A2B] uppercase leading-tight mb-7"
+                className="font-serif font-black text-[#1C3A2B] uppercase leading-tight mb-7"
                 style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", letterSpacing: "0.02em" }}
               >
                 ТРЕНИРОВКИ<br />С МАСТЕРАМИ
@@ -321,7 +321,7 @@ export default function About() {
           <AnimatedSection className="mb-14">
             <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Команда</p>
             <h2
-              className="font-serif text-[#1C3A2B] uppercase leading-tight"
+              className="font-serif font-black text-[#1C3A2B] uppercase leading-tight"
               style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "0.02em" }}
             >
               ЛЮДИ,<br />КОТОРЫЕ СОЗДАЮТ<br />КЛУБ
@@ -364,7 +364,7 @@ export default function About() {
           <AnimatedSection>
             <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-semibold mb-5">Присоединиться</p>
             <h2
-              className="font-serif text-white uppercase leading-tight mb-7"
+              className="font-serif font-black text-white uppercase leading-tight mb-7"
               style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)", letterSpacing: "0.02em" }}
             >
               НАЧНИТЕ ИГРУ<br />В VERDE
