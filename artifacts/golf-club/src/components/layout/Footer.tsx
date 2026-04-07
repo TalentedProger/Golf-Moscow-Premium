@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
+import { SiVk, SiInstagram, SiTelegram } from "@icons-pack/react-simple-icons";
 
 const footerLinks = {
   "Услуги": [
@@ -43,11 +44,14 @@ export default function Footer() {
               Премиальный гольф-клуб в Подмосковье. Место, где каждый раунд становится незабываемым событием.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/55 hover:text-white hover:border-white/50 transition-colors" data-testid="social-instagram">
-                <Instagram size={16} />
+              <a href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/55 hover:text-white hover:border-white/50 transition-colors" data-testid="social-vk">
+                <SiVk size={14} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/55 hover:text-white hover:border-white/50 transition-colors" data-testid="social-facebook">
-                <Facebook size={16} />
+              <a href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/55 hover:text-white hover:border-white/50 transition-colors" data-testid="social-instagram">
+                <SiInstagram size={14} />
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full border border-white/20 flex items-center justify-center text-white/55 hover:text-white hover:border-white/50 transition-colors" data-testid="social-telegram">
+                <SiTelegram size={14} />
               </a>
             </div>
           </div>

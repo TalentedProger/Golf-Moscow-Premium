@@ -52,7 +52,7 @@ export default function CounterStat({
         {label}
       </div>
       {description && (
-        <div className={`text-xs leading-relaxed max-w-[160px] mx-auto ${
+        <div className={`text-xs leading-relaxed max-w-[160px] md:max-w-none md:whitespace-nowrap mx-auto ${
           dark ? "text-white/50" : "text-[#1C3A2B]/50"
         }`}>
           {description}

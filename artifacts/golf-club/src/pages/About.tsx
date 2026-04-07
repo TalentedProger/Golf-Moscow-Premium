@@ -11,6 +11,7 @@ import heroImg from "@/assets/hero-aerial.png";
 import waterHazardImg from "@/assets/water-hazard.png";
 import golfBallImg from "@/assets/golf-ball.png";
 import equipmentImg from "@/assets/equipment.png";
+import championshipCourseImg from "@assets/championship_course.jpg";
 
 const values = [
   { num: "01", title: "Приватность", desc: "Ограниченное членство. Каждый резидент чувствует себя в абсолютном уединении, даже в разгар сезона." },
@@ -56,11 +57,11 @@ export default function About() {
             <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-semibold mb-5">Verde Golf Club</p>
             <h1
               className="font-serif font-black text-white uppercase leading-[0.93] mb-6"
-              style={{ fontSize: "clamp(2.8rem, 7vw, 6rem)", letterSpacing: "0.02em" }}
+              style={{ fontSize: "clamp(3rem, 7vw, 6.5rem)", letterSpacing: "0.02em" }}
             >
               О КЛУБЕ<br />И ГОЛЬФ-ПОЛЕ
             </h1>
-            <p className="text-white/60 max-w-xl leading-relaxed" style={{ fontSize: "clamp(0.95rem, 1.6vw, 1.1rem)" }}>
+            <p className="text-white/80 max-w-xl leading-relaxed font-light" style={{ fontSize: "clamp(1.1rem, 1.6vw, 1.2rem)" }}>
               Verde — это не просто гольф-клуб. Это пространство для стратегического мышления,
               дисциплины и искусства безупречного отдыха в 40 минутах от Москвы.
             </p>
@@ -71,17 +72,18 @@ export default function About() {
       {/* ═══════════════════════════════════════════
           PHILOSOPHY — full bleed split
       ═══════════════════════════════════════════ */}
-      <section className="grid grid-cols-1 lg:grid-cols-2">
-        <AnimatedSection direction="left" className="bg-[#F5F0E8] flex items-center order-2 lg:order-1">
-          <div className="px-10 md:px-16 py-24">
-            <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-6">Наша миссия</p>
+      <section className="grid grid-cols-1 lg:grid-cols-2 bg-white">
+        <AnimatedSection direction="left" className="flex items-center order-2 lg:order-1">
+          <div className="px-10 md:px-14 lg:px-20 py-24 md:py-32">
+            <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-bold mb-6">Наша миссия</p>
             <h2
-              className="font-serif font-black text-[#1C3A2B] uppercase leading-tight mb-8"
-              style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", letterSpacing: "0.02em" }}
+              className="font-serif font-black text-[#1C3A2B] uppercase leading-[1.05] mb-8"
+              style={{ fontSize: "clamp(2.2rem, 3.5vw, 3.5rem)", letterSpacing: "0.01em" }}
             >
-              ОСНОВАНО<br />В 2019 ГОДУ
+              ОСНОВАНО<br />В <span className="text-[#4A8862]">2019</span> ГОДУ
             </h2>
-            <p className="text-[#1C3A2B]/60 leading-relaxed mb-5 text-sm md:text-base">
+            <div className="w-12 h-0.5 bg-[#C9A96E] mb-8" />
+            <p className="text-[#1C3A2B]/75 leading-relaxed mb-6 text-base md:text-lg font-medium">
               Verde Golf Club создавался как ответ на потребность в по-настоящему закрытом и исключительном пространстве вблизи Москвы. Место, где профессиональный гольф встречается с роскошным отдыхом.
             </p>
             <p className="text-[#1C3A2B]/60 leading-relaxed text-sm md:text-base">
@@ -90,13 +92,13 @@ export default function About() {
           </div>
         </AnimatedSection>
 
-        <AnimatedSection direction="right" className="order-1 lg:order-2 overflow-hidden">
-          <div className="h-full min-h-[400px] overflow-hidden">
+        <AnimatedSection direction="right" className="order-1 lg:order-2 overflow-hidden h-full">
+          <div className="h-full min-h-[400px] lg:min-h-full overflow-hidden relative">
+            <div className="absolute inset-0 bg-black/10 z-10" />
             <img
               src={clubhouseImg}
               alt="Clubhouse"
-              className="w-full h-full object-cover"
-              style={{ minHeight: "500px" }}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
             />
           </div>
         </AnimatedSection>
@@ -105,38 +107,43 @@ export default function About() {
       {/* ═══════════════════════════════════════════
           VALUES — numbered list
       ═══════════════════════════════════════════ */}
-      <section className="bg-[#1C3A2B] py-24 md:py-32">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <AnimatedSection className="mb-16">
+      <section className="bg-[#1C3A2B] py-24 md:py-32 relative overflow-hidden">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/5 to-transparent pointer-events-none" />
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#4A8862] rounded-full blur-[120px] opacity-10 pointer-events-none" />
+        
+        <div className="w-full px-10 md:px-14 lg:px-20 relative z-10">
+          <AnimatedSection className="mb-16 md:mb-20 text-center md:text-right">
             <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Ценности</p>
             <h2
-              className="font-serif font-black text-white uppercase leading-tight"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "0.02em" }}
+              className="font-serif font-black text-white uppercase leading-[1.05]"
+              style={{ fontSize: "clamp(2.5rem, 4.5vw, 4rem)", letterSpacing: "0.01em" }}
             >
               ЧТО ЛЕЖИТ<br />В ОСНОВЕ КЛУБА
             </h2>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#4A8862]/20 border border-[#4A8862]/20">
             {values.map((v, i) => (
               <AnimatedSection key={v.num} delay={i * 0.1}>
                 <motion.div
-                  whileHover={{ backgroundColor: "rgba(255,255,255,0.06)" }}
-                  className="p-10 bg-[#1C3A2B] transition-colors duration-300"
+                  whileHover={{ backgroundColor: "rgba(255,255,255,0.06)", scale: 1.01 }}
+                  className="p-10 md:p-14 bg-[#1C3A2B] transition-all duration-400 h-full flex flex-col justify-center relative overflow-hidden group"
                 >
+                  <div className="absolute top-0 left-0 w-1 h-0 bg-[#C9A96E] transition-all duration-500 group-hover:h-full" />
                   <div
-                    className="font-serif font-black text-white/20 mb-5 leading-none"
-                    style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "0.02em" }}
+                    className="font-serif font-black text-[#4A8862]/30 mb-6 leading-none transition-colors duration-500 group-hover:text-[#C9A96E]/40"
+                    style={{ fontSize: "clamp(3rem, 6vw, 4.5rem)", letterSpacing: "0.02em" }}
                   >
                     {v.num}
                   </div>
                   <h3
-                    className="font-serif font-black text-white uppercase mb-3 leading-tight"
-                    style={{ fontSize: "clamp(1.3rem, 2vw, 1.9rem)", letterSpacing: "0.03em" }}
+                    className="font-serif font-black text-white uppercase mb-4 leading-tight group-hover:text-[#C9A96E] transition-colors duration-400"
+                    style={{ fontSize: "clamp(1.4rem, 2.2vw, 2rem)", letterSpacing: "0.02em" }}
                   >
                     {v.title}
                   </h3>
-                  <p className="text-white/50 text-sm leading-relaxed">{v.desc}</p>
+                  <p className="text-white/60 text-sm md:text-base leading-relaxed font-light">{v.desc}</p>
                 </motion.div>
               </AnimatedSection>
             ))}
@@ -159,79 +166,67 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          COURSE HERO — full bleed dark image
+          COURSE HERO & SCORECARD — MERGED SECTION
       ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden" style={{ minHeight: "60vh" }}>
-        <img src={waterHazardImg} alt="Golf course water hazard" className="w-full h-full object-cover absolute inset-0" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#1C3A2B]/90 via-[#1C3A2B]/60 to-transparent" />
+      <section className="relative overflow-hidden py-24 md:py-32 flex flex-col justify-center" style={{ minHeight: "80vh" }}>
+        <img src={championshipCourseImg} alt="Championship Course" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/30" />
 
-        <div className="relative z-10 flex items-center min-h-[60vh] px-6 md:px-16 py-24">
-          <AnimatedSection direction="right">
+        <div className="relative z-10 w-full px-10 md:px-14 lg:px-20 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          <AnimatedSection direction="left" className="w-full">
             <p className="text-[#C9A96E] text-xs tracking-[0.35em] uppercase font-semibold mb-5">Гольф-поле</p>
             <h2
               className="font-serif font-black text-white uppercase leading-tight mb-6"
-              style={{ fontSize: "clamp(2.2rem, 5vw, 4.5rem)", letterSpacing: "0.02em" }}
+              style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", letterSpacing: "0.02em" }}
             >
               18-ЛУНОЧНЫЙ<br />ЧЕМПИОНСКИЙ<br />КУРС
             </h2>
-            <p className="text-white/60 max-w-md leading-relaxed mb-8 text-sm md:text-base">
+            <p className="text-white/75 leading-relaxed mb-10 text-base md:text-lg font-light">
               Спроектированный мастерами своего дела, каждый метр поля Verde предлагает уникальный тактический вызов.
               Рейтинг курса — 73.2, Slope — 131.
             </p>
-            <div className="flex gap-6 text-white/70 text-xs tracking-widest uppercase">
-              <div><span className="block font-serif font-black text-white" style={{ fontSize: "1.5rem" }}>Par 72</span>Стандарт</div>
-              <div><span className="block font-serif font-black text-white" style={{ fontSize: "1.5rem" }}>6800м</span>С чёрных ти</div>
-              <div><span className="block font-serif font-black text-white" style={{ fontSize: "1.5rem" }}>73.2</span>Рейтинг</div>
+            <div className="flex flex-wrap gap-8 text-white/50 text-xs tracking-[0.2em] uppercase font-semibold">
+              <div><span className="block font-serif font-bold text-white mb-2" style={{ fontSize: "1.8rem", letterSpacing: "0.05em" }}>Par 72</span>Стандарт</div>
+              <div><span className="block font-serif font-bold text-white mb-2" style={{ fontSize: "1.8rem", letterSpacing: "0.05em" }}>6800м</span>С чёрных ти</div>
+              <div><span className="block font-serif font-bold text-white mb-2" style={{ fontSize: "1.8rem", letterSpacing: "0.05em" }}>73.2</span>Рейтинг</div>
             </div>
           </AnimatedSection>
-        </div>
-      </section>
 
-      {/* ═══════════════════════════════════════════
-          SCORECARD — editorial table
-      ═══════════════════════════════════════════ */}
-      <section className="bg-[#F5F0E8] py-24">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <AnimatedSection className="mb-12">
-            <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-3">Scorecard</p>
-            <h2
-              className="font-serif font-black text-[#1C3A2B] uppercase leading-tight"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.2rem)", letterSpacing: "0.02em" }}
-            >
-              КАРТОЧКА ПОЛЯ<br />(ПЕРЕДНЯЯ ДЕВЯТКА)
-            </h2>
-          </AnimatedSection>
+          <AnimatedSection direction="right" className="w-full flex justify-end">
+            <div className="bg-white/10 backdrop-blur-md rounded-[2rem] p-6 sm:p-10 border border-white/20 shadow-2xl w-full">
+              <div className="mb-8">
+                <p className="text-white/50 text-[10px] tracking-[0.3em] uppercase font-bold mb-2">Scorecard</p>
+                <h3 className="font-serif font-black text-white uppercase text-2xl tracking-wide">КАРТОЧКА ПОЛЯ<br/><span className="text-[#C9A96E] text-lg">(ПЕРЕДНЯЯ ДЕВЯТКА)</span></h3>
+              </div>
 
-          <AnimatedSection delay={0.2}>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm border-collapse">
-                <thead>
-                  <tr className="bg-[#1C3A2B] text-white">
-                    {["Лунка", "Пар", "Ярды", "ГКГП"].map((h) => (
-                      <th key={h} className="px-6 py-4 text-left text-xs tracking-[0.2em] uppercase font-semibold">{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {holes.map((row, i) => (
-                    <tr
-                      key={row.hole}
-                      className={`border-b border-[#1C3A2B]/8 transition-colors hover:bg-[#1C3A2B]/5 ${i % 2 === 0 ? "bg-white" : "bg-[#F5F0E8]"}`}
-                    >
-                      <td className="px-6 py-4 font-bold text-[#1C3A2B]">{row.hole}</td>
-                      <td className="px-6 py-4 text-[#4A8862] font-semibold">{row.par}</td>
-                      <td className="px-6 py-4 text-[#1C3A2B]/70">{row.yards}</td>
-                      <td className="px-6 py-4 text-[#1C3A2B]/70">{row.hdcp}</td>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm text-left">
+                  <thead>
+                    <tr className="border-b border-white/20 text-white/50 text-xs uppercase tracking-[0.15em]">
+                      <th className="pb-4 font-semibold">Лунка</th>
+                      <th className="pb-4 font-semibold">Пар</th>
+                      <th className="pb-4 font-semibold">Ярды</th>
+                      <th className="pb-4 font-semibold">ГКГП</th>
                     </tr>
-                  ))}
-                  <tr className="bg-[#1C3A2B] text-white font-semibold">
-                    <td className="px-6 py-4">Итого</td>
-                    <td className="px-6 py-4">36</td>
-                    <td className="px-6 py-4">3 485</td>
-                    <td className="px-6 py-4">—</td>
-                  </tr>
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y divide-white/10">
+                    {holes.map((row) => (
+                      <tr key={row.hole} className="text-white hover:bg-white/5 transition-colors">
+                        <td className="py-3.5 font-bold">{row.hole}</td>
+                        <td className="py-3.5 text-[#C9A96E] font-semibold">{row.par}</td>
+                        <td className="py-3.5 text-white/70">{row.yards}</td>
+                        <td className="py-3.5 text-white/70">{row.hdcp}</td>
+                      </tr>
+                    ))}
+                    <tr className="text-white bg-white/5">
+                      <td className="py-4 font-bold uppercase tracking-widest text-xs">Итого</td>
+                      <td className="py-4 font-bold text-[#C9A96E]">36</td>
+                      <td className="py-4 font-bold text-white/90">3 485</td>
+                      <td className="py-4 text-white/50">—</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </AnimatedSection>
         </div>
@@ -271,13 +266,35 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          COACHING — editorial horizontal layout
+          ACADEMY & TEAM — MERGED SECTION
       ═══════════════════════════════════════════ */}
-      <section className="py-24 md:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <AnimatedSection direction="right">
-              <div className="overflow-hidden" style={{ aspectRatio: "4/5" }}>
+      <section className="bg-white border-b border-[#1C3A2B]/8">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          {/* Coaching Side */}
+          <div className="px-10 md:px-14 lg:px-20 py-24 md:py-32 flex flex-col justify-center">
+            <AnimatedSection direction="left">
+              <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-5">Обучение и Штаб</p>
+              <h2
+                className="font-serif font-black text-[#1C3A2B] uppercase leading-tight mb-7"
+                style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", letterSpacing: "0.02em" }}
+              >
+                АКАДЕМИЯ<br />И МАСТЕРА
+              </h2>
+              <p className="text-[#1C3A2B]/60 leading-relaxed mb-5 text-sm md:text-base max-w-lg">
+                Программа обучения Verde разработана командой сертифицированных тренеров PGA. Подходит для начинающих и опытных игроков — от постановки удара до подготовки к турнирам.
+              </p>
+              <p className="text-[#1C3A2B]/60 leading-relaxed mb-10 text-sm md:text-base max-w-lg">
+                Видеоанализ техники, индивидуальные программы тренировок, launch monitor — всё это входит в базовый пакет членства.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 mb-16">
+                {["Индивидуальные уроки", "Групповые занятия", "Детская академия", "Онлайн-анализ техники"].map((item) => (
+                  <div key={item} className="flex items-center gap-3 text-sm text-[#1C3A2B]/80 font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#4A8862] flex-shrink-0" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <div className="overflow-hidden" style={{ aspectRatio: "16/9" }}>
                 <img
                   src={coachingImg}
                   alt="Golf coaching"
@@ -285,27 +302,30 @@ export default function About() {
                 />
               </div>
             </AnimatedSection>
+          </div>
 
-            <AnimatedSection direction="left" delay={0.15}>
-              <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-5">Обучение</p>
-              <h2
-                className="font-serif font-black text-[#1C3A2B] uppercase leading-tight mb-7"
-                style={{ fontSize: "clamp(2rem, 3.5vw, 3.2rem)", letterSpacing: "0.02em" }}
-              >
-                ТРЕНИРОВКИ<br />С МАСТЕРАМИ
-              </h2>
-              <p className="text-[#1C3A2B]/60 leading-relaxed mb-5 text-sm md:text-base">
-                Программа обучения Verde разработана командой сертифицированных тренеров PGA. Подходит для начинающих и опытных игроков — от постановки удара до подготовки к турнирам.
-              </p>
-              <p className="text-[#1C3A2B]/60 leading-relaxed mb-10 text-sm md:text-base">
-                Видеоанализ техники, индивидуальные программы тренировок, launch monitor — всё это входит в базовый пакет членства.
-              </p>
-              <div className="grid grid-cols-2 gap-x-8 gap-y-4">
-                {["Индивидуальные уроки", "Групповые занятия", "Детская академия", "Онлайн-анализ техники"].map((item) => (
-                  <div key={item} className="flex items-center gap-2 text-sm text-[#1C3A2B]/70">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#4A8862] flex-shrink-0" />
-                    {item}
-                  </div>
+          {/* Team Side */}
+          <div className="bg-[#F5F0E8] px-10 md:px-14 lg:px-20 py-24 md:py-32 flex flex-col justify-center border-l border-[#1C3A2B]/8">
+            <AnimatedSection direction="right">
+              <h3 className="font-serif font-black text-[#1C3A2B] uppercase leading-tight mb-12" style={{ fontSize: "clamp(1.5rem, 2vw, 2rem)", letterSpacing: "0.02em" }}>
+                Люди, которые<br />создают клуб
+              </h3>
+              <div className="flex flex-col gap-6">
+                {team.map((member, i) => (
+                  <motion.div
+                    key={member.name}
+                    whileHover={{ backgroundColor: "#1C3A2B", color: "white" }}
+                    className="group flex flex-col sm:flex-row items-start sm:items-center gap-6 p-6 bg-white transition-all duration-400 border border-[#1C3A2B]/5 shadow-sm"
+                  >
+                    <div className="w-16 h-16 rounded-full bg-[#1C3A2B] group-hover:bg-white flex items-center justify-center text-white group-hover:text-[#1C3A2B] font-bold text-xl flex-shrink-0 transition-colors duration-300">
+                      {member.initials}
+                    </div>
+                    <div className="flex-1">
+                      <div className="font-bold text-[#1C3A2B] group-hover:text-white text-lg mb-1 transition-colors duration-300">{member.name}</div>
+                      <div className="text-[#4A8862] group-hover:text-[#C9A96E] text-xs tracking-[0.15em] uppercase font-semibold mb-2 transition-colors duration-300">{member.role}</div>
+                      <div className="text-[#1C3A2B]/55 group-hover:text-white/70 text-sm leading-relaxed transition-colors duration-300">{member.desc}</div>
+                    </div>
+                  </motion.div>
                 ))}
               </div>
             </AnimatedSection>
@@ -314,83 +334,54 @@ export default function About() {
       </section>
 
       {/* ═══════════════════════════════════════════
-          TEAM — stripped back list
+          CTA — membership (Modernized)
       ═══════════════════════════════════════════ */}
-      <section className="py-24 bg-[#F5F0E8] border-t border-[#1C3A2B]/8">
-        <div className="max-w-6xl mx-auto px-6 md:px-12">
-          <AnimatedSection className="mb-14">
-            <p className="text-[#4A8862] text-xs tracking-[0.35em] uppercase font-semibold mb-4">Команда</p>
-            <h2
-              className="font-serif font-black text-[#1C3A2B] uppercase leading-tight"
-              style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", letterSpacing: "0.02em" }}
-            >
-              ЛЮДИ,<br />КОТОРЫЕ СОЗДАЮТ<br />КЛУБ
-            </h2>
-          </AnimatedSection>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#1C3A2B]/10">
-            {team.map((member, i) => (
-              <AnimatedSection key={member.name} delay={i * 0.08}>
-                <motion.div
-                  whileHover={{ backgroundColor: "#1C3A2B", color: "white" }}
-                  className="group flex items-start gap-6 p-8 bg-[#F5F0E8] transition-colors duration-400 cursor-default"
-                >
-                  <div className="w-14 h-14 rounded-full bg-[#1C3A2B] group-hover:bg-white flex items-center justify-center text-white group-hover:text-[#1C3A2B] font-bold text-base flex-shrink-0 transition-colors duration-300">
-                    {member.initials}
-                  </div>
-                  <div>
-                    <div className="font-bold text-[#1C3A2B] group-hover:text-white text-base mb-0.5 transition-colors duration-300">{member.name}</div>
-                    <div className="text-[#4A8862] group-hover:text-[#C9A96E] text-xs tracking-[0.15em] uppercase font-semibold mb-2 transition-colors duration-300">{member.role}</div>
-                    <div className="text-[#1C3A2B]/55 group-hover:text-white/65 text-xs leading-relaxed transition-colors duration-300">{member.desc}</div>
-                  </div>
-                </motion.div>
-              </AnimatedSection>
-            ))}
+      <section className="relative py-24 md:py-32 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <AnimatedSection direction="left" className="relative z-10 lg:pr-10">
+              <p className="text-[#4A8862] text-xs tracking-[0.4em] uppercase font-bold mb-6">Присоединиться</p>
+              <h2
+                className="font-serif font-black text-[#1C3A2B] uppercase leading-[1.05] mb-8"
+                style={{ fontSize: "clamp(2.5rem, 5vw, 4rem)", letterSpacing: "0.01em" }}
+              >
+                НАЧНИТЕ ИГРУ<br />В VERDE
+              </h2>
+              <p className="text-[#1C3A2B]/75 leading-relaxed mb-10 text-base md:text-lg font-medium max-w-lg">
+                Откройте для себя привилегии закрытого гольф-клуба. Узнайте об условиях членства и запишитесь на персональный ознакомительный визит поля и клубного дома.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-5">
+                <Link href="/membership">
+                  <span
+                    className="group inline-flex items-center justify-center gap-3 px-10 py-4 bg-[#1C3A2B] text-white cursor-pointer hover:bg-[#C9A96E] transition-colors font-semibold text-sm tracking-wide"
+                  >
+                    Условия членства <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+                <Link href="/contact">
+                  <span
+                    className="inline-flex items-center justify-center gap-2 px-10 py-4 border border-[#1C3A2B]/20 text-[#1C3A2B] cursor-pointer hover:bg-[#1C3A2B]/5 transition-colors font-semibold text-sm tracking-wide"
+                  >
+                    Связаться с нами
+                  </span>
+                </Link>
+              </div>
+            </AnimatedSection>
+            
+            <AnimatedSection direction="right" className="relative h-full min-h-[500px]">
+              <div className="absolute top-0 right-0 w-4/5 h-[85%] z-10 overflow-hidden shadow-2xl">
+                <img src={heroImg} alt="Verde Experience" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
+              </div>
+              <div className="absolute bottom-0 left-0 w-3/5 h-[60%] z-20 overflow-hidden shadow-2xl border-4 border-white">
+                <img src={clubhouseImg} alt="Verde Clubhouse" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
+              </div>
+              {/* Decorative accent */}
+              <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-[#C9A96E] rounded-full mix-blend-multiply opacity-40 blur-2xl z-0" />
+            </AnimatedSection>
+            
           </div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════
-          CTA — membership
-      ═══════════════════════════════════════════ */}
-      <section className="relative overflow-hidden py-32 bg-[#1C3A2B]">
-        <div
-          className="absolute inset-0 opacity-15"
-          style={{ backgroundImage: `url(${heroImg})`, backgroundSize: "cover", backgroundPosition: "center" }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1C3A2B]/90 to-[#0D1F17]/95" />
-
-        <div className="relative max-w-3xl mx-auto px-6 md:px-12 text-center">
-          <AnimatedSection>
-            <p className="text-[#C9A96E] text-xs tracking-[0.4em] uppercase font-semibold mb-5">Присоединиться</p>
-            <h2
-              className="font-serif font-black text-white uppercase leading-tight mb-7"
-              style={{ fontSize: "clamp(2.2rem, 5vw, 4rem)", letterSpacing: "0.02em" }}
-            >
-              НАЧНИТЕ ИГРУ<br />В VERDE
-            </h2>
-            <p className="text-white/55 mb-12 max-w-lg mx-auto leading-relaxed">
-              Узнайте об условиях членства и запишитесь на ознакомительный визит.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/membership">
-                <span
-                  className="group inline-flex items-center gap-3 px-8 py-4 bg-white text-[#1C3A2B] cursor-pointer hover:bg-[#C9A96E] transition-colors font-semibold text-sm tracking-wide"
-                  style={{ borderRadius: "4px" }}
-                >
-                  Условия членства <ArrowRight size={15} />
-                </span>
-              </Link>
-              <Link href="/contact">
-                <span
-                  className="inline-flex items-center gap-2 px-8 py-4 border border-white/30 text-white cursor-pointer hover:bg-white/10 transition-colors font-medium text-sm tracking-wide"
-                  style={{ borderRadius: "4px" }}
-                >
-                  Связаться с нами
-                </span>
-              </Link>
-            </div>
-          </AnimatedSection>
         </div>
       </section>
 

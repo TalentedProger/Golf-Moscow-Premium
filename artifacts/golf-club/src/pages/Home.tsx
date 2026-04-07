@@ -1,7 +1,8 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "wouter";
-import { ArrowUpRight, ArrowRight, Instagram, Twitter, Clock, MapPin, Users, Calendar } from "lucide-react";
+import { ArrowUpRight, ArrowRight, Clock, MapPin, Users, Calendar } from "lucide-react";
+import { SiVk, SiInstagram, SiTelegram } from "@icons-pack/react-simple-icons";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import CounterStat from "@/components/ui/CounterStat";
 import heroImg from "@/assets/hero-aerial.png";
@@ -84,7 +85,6 @@ export default function Home() {
 
   return (
     <div className="overflow-x-hidden bg-white">
-
       {/* ═══════════════════════════════════════════
           HERO
       ═══════════════════════════════════════════ */}
@@ -109,12 +109,10 @@ export default function Home() {
             style={{ maxWidth: "min(480px, 55vw)" }}
           >
             <p
-              className="uppercase font-extrabold font-sans leading-[1.05] break-words"
+              className="uppercase font-extrabold font-sans leading-[1.05] break-words text-white/80"
               style={{
                 fontSize: "clamp(1.5rem, 3.8vw, 3.4rem)",
                 letterSpacing: "0.1em",
-                color: "rgba(255,255,255,0.06)",
-                WebkitTextStroke: "1.5px rgba(255,255,255,0.72)",
                 fontFamily: "system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif",
               }}
             >
@@ -442,7 +440,7 @@ export default function Home() {
             <h2
               className="font-serif font-black text-white uppercase leading-tight mb-5"
               style={{
-                fontSize: "clamp(2.8rem, 7vw, 6.5rem)",
+                fontSize: "clamp(1.8rem, 4.2vw, 3.2rem)",
                 letterSpacing: "0.03em",
                 fontStyle: "italic",
                 fontWeight: "800",
@@ -472,8 +470,9 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 z-10 px-8 sm:px-14 pb-7 pt-4 flex items-center justify-between">
           <span className="text-white/50 text-sm tracking-wide">+7 (000) 000-00-00</span>
           <div className="flex items-center gap-4">
-            <a href="#" className="text-white/50 hover:text-white transition-colors"><Instagram size={18} /></a>
-            <a href="#" className="text-white/50 hover:text-white transition-colors"><Twitter size={18} /></a>
+            <a href="#" className="text-white/50 hover:text-white transition-colors"><SiVk size={18} /></a>
+            <a href="#" className="text-white/50 hover:text-white transition-colors"><SiInstagram size={18} /></a>
+            <a href="#" className="text-white/50 hover:text-white transition-colors"><SiTelegram size={18} /></a>
           </div>
           <span className="text-white/30 text-xs tracking-[0.15em] uppercase font-medium hidden sm:block">Verde Golf Club</span>
         </div>
